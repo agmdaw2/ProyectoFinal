@@ -1,4 +1,3 @@
-
 = Planificació
 
 == Setmana 1

@@ -29,7 +29,7 @@ image::img/mysql.png[Logomysql, 30%]
 
 == Nosotros
 
-Nuestra empresa *Tecnoticos S.L.* esta compuesta por nuestros cuatro compañeros: +
+Nuestra empresa *Tecnoticos S.L.* esta compuesta por nuestros tres compañeros: +
  
 * Adrià Ballesteros - https://github.com/AdriaBallesteros[Espacio Personal]
 * Iván Dominguez - https://github.com/IvanDominguez2000[Espacio Personal] 

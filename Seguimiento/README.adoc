@@ -41,6 +41,7 @@ h| Ivan a| . Diseño moqups *(1h)* +
 h| Adrià a| . Reunion Grupo *(1h)* +
 . HTML/CSS *(2h)* +
 h| Ivan a| . Reunion Grupo *(1h)* +
-. Diseño moqups *(2h)* +
+. Diseño moqups *(3h)* +
+. Diagrama de casos de uso y especificacion casos de uso *(2h)* +
 
 |====

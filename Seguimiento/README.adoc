@@ -43,6 +43,6 @@ h| Adrià a| . Reunion Grupo *(1h)* +
 h| Ivan a| . Reunion Grupo *(1h)* +
 . Diseño moqups *(2h)* +
 . Diagrama de casos de uso y especificacion casos de uso *(2h)* +
-. Diseño Inicial de la base de datos *(Domingo 09/05/21 1h)* +
+. Diseño Inicial de la base de datos *(1h)* +
 
 |====

@@ -1,12 +1,11 @@
 html, body {
     margin:0;
     padding:0;
-    height:100%;
+    height:100vh;
   }
   
   #pagina {
-    position: relative;
-    min-height: 100%;
+    height: 100vh;
   }
 
   .navbar {
@@ -14,6 +13,7 @@ html, body {
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     margin-top: 2%;
     width: 100vw;
+    height: vh;
     display: flex;
   }
   
@@ -53,7 +53,7 @@ html, body {
     position: absolute;
     left: 0;
     background-color: red;
-    width: 100%;
+    width: 100vw;
     z-index: 1;
   }
   
@@ -75,12 +75,46 @@ html, body {
       height: 1px;
       background-color: black;
   }
+
+  .search-container {
+    display: inline-flex;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 8px;
+    flex-direction: row;
+    margin-left: 35%;
+    padding-bottom: 6px;
+    padding-left: 6px;
+  }
+  
+  input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    width: 22vw;
+  }
+  
+  .search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .search-container button:hover {
+    background: #ccc;
+  }
+
   #contenido {
     padding-bottom:50px; /* este valor debe ser igual o mayor al alto del pie */
   }
   
   .Footer{
-    text-align: center;
     position: fixed;
     bottom: 0;
     left: 0;

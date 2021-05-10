@@ -46,3 +46,15 @@ h| Ivan a| . Reunion Grupo *(1h)* +
 . Diseño Inicial de la base de datos *(1h)* +
 
 |====
+
+== 10/05/21
+
+[cols="1,1,4"]
+|====
+.3+^.^h| Seguimiento h| Antonio a|. +
+h| Adrià a| . +
+. HTML/CSS *(2h)* +
+h| Ivan a| . +
+
+
+|====

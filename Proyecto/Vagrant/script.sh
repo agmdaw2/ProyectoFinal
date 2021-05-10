@@ -21,16 +21,10 @@ apt install php-mysql -y
 systemctl restart apache2
 
 # Setup database
-mysql -uroot -ppassword -e "CREATE DATABASE tecnoticos;
+# mysql -uroot -ppassword -e "CREATE DATABASE tecnoticos;
 
-use tecnoticos;
-
-create table curs(
-	nombre varchar(100) NOT NULL,
-    curso_id int auto_increment,
-    PRIMARY KEY(curso_id)
-);
-"
+# use tecnoticos;
+#"
 
 #Users
 mysql -uroot -ppassword -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password';"

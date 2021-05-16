@@ -202,6 +202,61 @@ html, body {
     margin-left: 70%;
   }
 
+  #consulta {
+    padding-bottom: 50px;
+    margin-left: 15%;
+    margin-right: 10%;
+    margin-top: 5%;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    width: 30%;
+    /* height: 50%; */
+    border: 1px solid black;
+  }
+
+  #dilema {
+    padding-bottom: 50px;
+    margin-left: 53%;
+    margin-right: 10%;
+    margin-top: -15%;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    width: 30%;
+    /* height: 50%; */
+    border: 1px solid black;
+  }
+
+#cedad {
+  padding-bottom: 50px;
+  margin-left: 30%;
+  margin-right: 10%;
+  margin-top: -29.6%;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  width: 30%;
+  /* height: 50%; */
+  /* border: 1px solid black; */
+}
+
+#cinstituto {
+  padding-bottom: 50px;
+  margin-left: 60%;
+  margin-right: 10%;
+  margin-top: -40%;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  width: 30%;
+  /* height: 50%; */
+  /* border: 1px solid black; */
+}
+
+#cpregunta {
+  padding-bottom: 50px;
+  margin-left: 30%;
+  margin-right: 10%;
+  margin-top: -14.5%;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  width: 30%;
+  /* height: 50%; */
+  /* border: 1px solid black; */
+}
+
   .Footer{
     position: fixed;
     bottom: 0;
@@ -229,7 +284,7 @@ html, body {
     margin-left: 25%;
   }
 
-  .btn-primary {
+  /* .btn-primary {
     color: black;
     background-color: gray;
   }
@@ -248,7 +303,7 @@ html, body {
   .btn-primary:disabled,
   .btn-primary.is-disabled {
     opacity: .5;
-  }
+  } */
 
   /*CSS BOTON*/
   .button-container-1 {
@@ -308,7 +363,7 @@ html, body {
     height: 100%;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 1px;
     background: #000;
     -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");

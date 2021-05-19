@@ -9,7 +9,12 @@
 
 <body>
   <div id="pagina">
-    <div id="cabecera">TECNOETICA</div>
+  <div id="cabecera">
+            <a href="Login.html"><img src="img/logotipo.png" alt="logo" width="300px" height="90px"></a>
+        </div>
+        <div class="Login-Registro">
+            <img src="img/Perfil.png" alt="Perfil" width="50px" height="50px">
+        </div>
     <div class="navbar">
       <div class="subnav">
         <button class="subnavbtn" onclick="window.location.href='Inicio.html'">Inicio <i
@@ -55,7 +60,7 @@
     </div>
 
     <div class="Footer">
-      <div id="footerContacto" class="ContenidoFooter">Correo: eramire1@xtec.cat</div>
+      <div id="footerContacto" class="ContenidoFooter">Correo:</div>
       <div id="footerCopy" class="ContenidoFooter">2021-2022 &copy; Tecnoetica</div>
       <div id="footerRedes" class="ContenidoFooter">Twitter</div>
     </div>

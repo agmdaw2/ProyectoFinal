@@ -12,7 +12,7 @@ html, body {
     color: black;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     margin-top: 2%;
-    width: 100%;
+    width: 100vw;
     height: vh;
     display: flex;
   }
@@ -54,7 +54,7 @@ html, body {
     position: absolute;
     left: 0;
     background-color: red;
-    width: 100%;
+    width: 100vw;
     z-index: 1;
   }
   
@@ -75,11 +75,6 @@ html, body {
   hr{
       height: 1px;
       background-color: black;
-  }
-
-  .Login-Registro{
-    margin-left: 82%;
-    margin-top: -4%;
   }
 
   .search-container {

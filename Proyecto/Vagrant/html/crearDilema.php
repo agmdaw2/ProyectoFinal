@@ -8,7 +8,12 @@
 	</head>
 <body>
 	<div id="pagina">
-    <div id="cabecera">TECNOETICA</div>
+  <div id="cabecera">
+            <a href="Login.html"><img src="img/logotipo.png" alt="logo" width="300px" height="90px"></a>
+        </div>
+        <div class="Login-Registro">
+            <img src="img/Perfil.png" alt="Perfil" width="50px" height="50px">
+        </div>
     <div class="navbar">
       <div class="subnav">
         <button class="subnavbtn" onclick="window.location.href='Inicio.html'">Inicio <i

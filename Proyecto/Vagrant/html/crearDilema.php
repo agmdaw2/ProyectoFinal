@@ -3,6 +3,7 @@
 <html>
 	<head>
 		<title>Tecnoetica</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 			<link rel="stylesheet" type="text/css" href="css/main2.css">
       <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
 	</head>
@@ -20,15 +21,15 @@
             class="fa fa-caret-down"></i></button>
       </div>
       <div class="subnav">
-        <button class="subnavbtn" onclick="window.location.href='Productes.html'">Dilemas Tecnoeticos<i
+        <button class="subnavbtn" onclick="window.location.href='listaActividades.php'">Dilemas Tecnoeticos<i
             class="fa fa-caret-down"></i></button>
       </div>
       <div class="subnav">
-        <button class="subnavbtn" onclick="window.location.href='Nosotros.html'">Propuesta Didactica<i
+        <button class="subnavbtn" onclick="window.location.href='propuestaDidactica.php'">Propuesta Didactica<i
             class="fa fa-caret-down"></i></button>
       </div>
       <div class="subnav">
-        <button class="subnavbtn" onclick="window.location.href='Exercicis.html'">Tecnoetica Futura<i
+        <button class="subnavbtn" onclick="window.location.href='tecnoeticaFutura.php'">Tecnoetica Futura<i
             class="fa fa-caret-down"></i></button>
       </div>
       <div class="subnav">

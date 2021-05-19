@@ -5,6 +5,7 @@
 <head>
     <title>Tecnoetica</title>
     <link rel="stylesheet" type="text/css" href="css/main2.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
 <body>

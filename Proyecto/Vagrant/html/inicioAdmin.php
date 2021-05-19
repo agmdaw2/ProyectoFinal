@@ -5,6 +5,7 @@
 <head>
   <title>Tecnoetica</title>
   <link rel="stylesheet" type="text/css" href="css/main2.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
 <body>
@@ -44,19 +45,17 @@
               <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div> -->
+        <div id="contenido2">
+          <div class="button-container-1">
+            <span class="mas">Crear</span>
+            <button id="work" type="button" name="Hover">Crear dilema</button>
+          </div> 
 
-    <div id="contenido2">
-      <div class="navbar1">
-        <div class="subnav">
-          <button class="subnavbtn" onclick="window.location.href='crearDilema.html'">Crear dilema <i
-              class="fa fa-caret-down"></i></button>
+          <div class="button-container-1">
+            <span class="mas">Descargar</span>
+            <button id="work" type="button" name="Hover">Mirar respuestas</button>
+          </div> 
         </div>
-        <div class="subnav">
-          <button class="subnavbtn" onclick="window.location.href='descargar.html'">Descargar respuestas<i
-              class="fa fa-caret-down"></i></button>
-        </div>
-        </div>
-      </div>
     </div>
 
     <div class="Footer">

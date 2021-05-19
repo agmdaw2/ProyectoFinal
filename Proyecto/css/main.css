@@ -11,7 +11,8 @@ html, body {
   }
 
   .Login-Registro{
-    margin-left: 80vw;
+    margin-left: 82vw;
+    margin-top: -4%;
   }
 
   #Form-Login{
@@ -34,6 +35,8 @@ html, body {
     width: 100vw;
     height: vh;
     display: flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
   
   .navbar a {

@@ -55,6 +55,7 @@ h| Ivan a| . Reunion Grupo *(1h)* +
 h| Adrià a| . +
 . HTML/CSS *(2h)* +
 h| Ivan a| . +
+. HTML/CSS *(6h)* +
 
 
 |====

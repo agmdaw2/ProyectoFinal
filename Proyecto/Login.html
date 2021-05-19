@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="css/login-registro.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <title>Login - Tecnoetica</title>
+</head>
+<body>
+    <div id="Form-idiomas">
+        <form>
+            <p>Idiomas:
+            <select name="Idioma">
+                <option value="ES">Español</option>
+                <option value="CAT">Catalán</option>
+                <option value="EN">Inglés</option>
+                </select></p>
+        </form>
+    </div>
+    <div id="menu">
+        <h1>Login</h1>
+    </div>
+    
+    <form id="Form-Login">
+        <div id="LogoLogin">
+            <img src="img/logo.png" alt="Logo" width="100px" height="25px">
+        </div>
+        <p>Correo</p>
+        <input type="text" placeholder="Correo" pattern="[a-zA-Z0-9]+" required>
+        <p>Contraseña</p>
+        <input type="password" placeholder="Contraseña" required><br><br><br>
+        <button type="submit" id="Login" value="Entrar">Entrar</button>
+        <input type="button" id=Registro onclick="window.location.href='Registro.html';" value="Registrarse" />
+        <p>¿Quieres volver al Inicio? <a href="index.html">Haz click aquí</a>.</p>
+        
+    </form>
+    <div class="Footer">
+        <div id="footerContacto" class="ContenidoFooter">Correo:</div>
+        <div id="footerCopy" class="ContenidoFooter">2021-2022 &copy; Tecnoetica</div>
+        <div id="footerRedes" class="ContenidoFooter">Twitter</div>
+</div>
+</body>
+</html>

@@ -2,11 +2,30 @@ html, body {
     margin:0;
     padding:0;
     height:100vh;
+    width: 100vw;
   }
   
   #pagina {
     height: 100vh;
+    width: 100vw;
   }
+
+  .Login-Registro{
+    margin-left: 80vw;
+  }
+
+  #Form-Login{
+    font-size: 16px;
+    border: black 2px solid;
+    border-radius: 8px;
+    margin-top: 2%;
+    margin-left: 42%;
+    margin-right: 37%;
+    padding: 25px;
+    width: auto;
+    height: auto;
+    display: inline-block;
+}
 
   .navbar {
     color: black;
@@ -43,9 +62,10 @@ html, body {
   }
   
   .navbar a:hover, .subnav:hover .subnavbtn {
-    background-color: darkorange;
+    background-color: black;
     text-decoration: none;
     transition: all .3s;
+    color: white;
   }
   
   .subnav-content {
@@ -59,13 +79,13 @@ html, body {
   
   .subnav-content a {
     
-    color: black;
+    color: white;
     text-decoration: none;
   }
   
   .subnav-content a:hover {
     background-color: #eee;
-    color: black;
+    color: white;
   }
   
   .subnav:hover .subnav-content {
@@ -93,6 +113,7 @@ html, body {
     font-size: 17px;
     border: none;
     width: 22vw;
+    outline: none;
   }
   
   .search-container button {
@@ -104,11 +125,56 @@ html, body {
     font-size: 17px;
     border: none;
     cursor: pointer;
+    outline: none;
   }
   
   .search-container button:hover {
     background: #ccc;
   }
+
+/* Slider imagen 1 */
+  /* #imagen{
+    width: 100vw;
+  }
+
+  #botonAtras{
+    position: absolute;
+    margin-top: 11%;
+    margin-left: 5px;
+  }
+
+  #botonAdelante{
+    position: absolute;
+    margin-left: -2.5%;
+    margin-top: 11%;
+  }
+
+  .arrows{
+    background-color: rgba(255, 255, 255, .01);
+   width: 20px;
+   height: 20px;
+   border-color: #000;
+   position: absolute;
+  }
+
+.prev{
+   border-bottom: 6px solid;
+   border-left: 6px solid;
+   border-right: none;
+   border-top: none;
+   transform: rotate(45deg);
+   left: 10px;
+}
+   
+.next{
+   border-bottom: 6px solid;
+   border-left: 6px solid;
+   border-right: none;
+   border-top: none;
+   transform: rotate(-135deg);
+} */
+
+
 
   #contenido {
     padding-bottom:50px; /* este valor debe ser igual o mayor al alto del pie */

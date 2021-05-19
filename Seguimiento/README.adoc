@@ -59,3 +59,18 @@ h| Ivan a|
 
 
 |====
+
+== 19/05/21
+
+[cols="1,1,4"]
+|====
+.3+^.^h| Seguimiento h| Antonio a|. Pruebas con ckEditor *(2h)* +
+. Arreglo para el envio y consulta con ckEditor mediante php *(4h)* +
+h| Adrià a| . Registro *(4h)* +
+. Login *(2h)* +
+h| Ivan a|. HTML/CSS *(3h)* +
+. Arreglos BBDD *(1h)* +
+. Importar a PHP el HTML *(2h)*
+
+
+|====

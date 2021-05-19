@@ -78,6 +78,9 @@ FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
 FOREIGN KEY (id_pregunta) REFERENCES pregunta(id_pregunta),
 FOREIGN KEY (id_dilema) REFERENCES dilema(id_dilema)
 );
+
+INSERT INTO usuario (edad, correo, contraseña, sexo, rol) VALUES ('33', 'admin@admin.com', 'admin', 'M', 'admin');
+INSERT INTO usuario (edad, correo, contraseña, sexo, rol) VALUES ('18', 'usuario@usuario.com', 'usuario', 'H', 'usuario');
 "
 
 #Users

@@ -4,6 +4,7 @@
 	<head>
 		<title>Tecnoetica</title>
 			<link rel="stylesheet" type="text/css" href="css/main2.css">
+      <link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
 <body>
 	<div id="pagina">
@@ -52,7 +53,7 @@
             Resumen Dilema seleccionado
           </div>
         </div>
-
+        
         <div class="Footer">
                 <div id="footerContacto" class="ContenidoFooter">Correo:</div>
                 <div id="footerCopy" class="ContenidoFooter">2021-2022 &copy; Tecnoetica</div>

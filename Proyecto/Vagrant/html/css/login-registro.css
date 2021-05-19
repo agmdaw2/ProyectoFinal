@@ -12,7 +12,7 @@ body{
 }
 
 #menu{
-    margin-left: 48%;
+    margin-left: 47%;
     margin-top: 5%
 }
 
@@ -26,8 +26,22 @@ body{
     font-size: 16px;
     border: black 2px solid;
     border-radius: 8px;
-    margin-top: 2%;
-    margin-left: 45%;
+    margin-top: 1%;
+    margin-left: 40%;
+    margin-bottom: 6.3%;
+    padding: 25px;
+    width: auto;
+    height: auto;
+    display: inline-block;
+}
+
+#Form-Registro{
+    font-size: 16px;
+    border: black 2px solid;
+    border-radius: 8px;
+    margin-top: 1%;
+    margin-left: 40%;
+    margin-bottom: 3%;
     padding: 25px;
     width: auto;
     height: auto;
@@ -50,7 +64,7 @@ body{
 
 
 .Footer{
-    position: fixed;
+    /*position: fixed;*/
     bottom: 0;
     left: 0;
     background-color: black;

@@ -26,14 +26,14 @@ use tecnoticos;
 CREATE TABLE dilema (
   id_dilema int AUTO_INCREMENT,
   titulo_dilema varchar(250) NOT NULL,
-  resumen_dilema varchar(600) NOT NULL,
-  descripcion_dilema varchar(600) NOT NULL,
+  resumen_dilema text NOT NULL,
+  descripcion_dilema text NOT NULL,
 PRIMARY KEY (id_dilema)
 );
 
 CREATE TABLE recurso (
 id_recurso int AUTO_INCREMENT,
-txt_recurso varchar(600) NOT NULL,
+txt_recurso text NOT NULL,
 id_dilema int NOT NULL,
 PRIMARY KEY (id_recurso),
 FOREIGN KEY(id_dilema) REFERENCES dilema(id_dilema)
@@ -42,7 +42,7 @@ FOREIGN KEY(id_dilema) REFERENCES dilema(id_dilema)
 
 CREATE TABLE pregunta (
   id_pregunta int AUTO_INCREMENT,
-  texto_pregunta varchar(250) NOT NULL,
+  texto_pregunta text NOT NULL,
 id_dilema int NOT NULL,
 PRIMARY KEY (id_pregunta),
 FOREIGN KEY(id_dilema) REFERENCES dilema(id_dilema)
@@ -69,7 +69,7 @@ FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
 
 CREATE TABLE respuesta (
  id_respuesta int AUTO_INCREMENT,
-texto_respuesta varchar(600) NOT NULL,
+texto_respuesta text NOT NULL,
    id_usuario int NOT NULL,
   id_pregunta int NOT NULL,
 id_dilema INT NOT NULL,

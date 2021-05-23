@@ -12,7 +12,7 @@
             $editor_data = $_POST['content'];
  
             // Create connection
-            $conn = new mysqli("localhost", "root", "admin123", "tecnoticos");
+            $conn = new mysqli("localhost", "root", "admin", "tecnoticos");
             // Check connection
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);

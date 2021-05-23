@@ -4,26 +4,25 @@ use tecnoticos;
 CREATE TABLE dilema (
   id_dilema int AUTO_INCREMENT,
   titulo_dilema varchar(250) NOT NULL,
-  resumen_dilema varchar(600) NOT NULL,
-  descripcion_dilema varchar(600) NOT NULL,
+  recurso_dilema text NOT NULL, 
+  resumen_dilema text NOT NULL,
+  descripcion_dilema text NOT NULL,
 PRIMARY KEY (id_dilema)
 );
 
-CREATE TABLE recurso (
-id_recurso int AUTO_INCREMENT,
-txt_recurso varchar(600) NOT NULL,
-id_dilema int NOT NULL,
-PRIMARY KEY (id_recurso),
-FOREIGN KEY(id_dilema) REFERENCES dilema(id_dilema)
-);
-
-
 CREATE TABLE pregunta (
   id_pregunta int AUTO_INCREMENT,
-  texto_pregunta varchar(250) NOT NULL,
+  texto_pregunta text NOT NULL,
 id_dilema int NOT NULL,
 PRIMARY KEY (id_pregunta),
 FOREIGN KEY(id_dilema) REFERENCES dilema(id_dilema)
+);
+
+CREATE TABLE instituto (
+id_instituto int AUTO_INCREMENT,
+nombre_instituto varchar(250) NOT NULL,
+dominio_instituto varchar(250) NOT NULL,
+PRIMARY KEY (id_instituto)
 );
 
 CREATE TABLE usuario (
@@ -33,21 +32,14 @@ CREATE TABLE usuario (
   contraseña varchar(250) NOT NULL,
   sexo varchar(1) NOT NULL,
   rol varchar(20) NOT NULL,
-PRIMARY KEY (id_usuario)
-);
-
-CREATE TABLE instituto (
-id_instituto int AUTO_INCREMENT,
-nombre_instituto varchar(250) NOT NULL,
-dominio_instituto varchar(250) NOT NULL,
-id_usuario int NOT NULL,
-PRIMARY KEY (id_instituto),
-FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
+  id_instituto int NOT NULL,
+PRIMARY KEY (id_usuario),
+FOREIGN KEY (id_instituto) REFERENCES instituto(id_instituto)
 );
 
 CREATE TABLE respuesta (
  id_respuesta int AUTO_INCREMENT,
-texto_respuesta varchar(600) NOT NULL,
+texto_respuesta text NOT NULL,
    id_usuario int NOT NULL,
   id_pregunta int NOT NULL,
 id_dilema INT NOT NULL,
@@ -56,3 +48,6 @@ FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
 FOREIGN KEY (id_pregunta) REFERENCES pregunta(id_pregunta),
 FOREIGN KEY (id_dilema) REFERENCES dilema(id_dilema)
 );
+INSERT INTO instituto (nombre_instituto, dominio_instituto) VALUES ('INS Nicolau Copernic', 'alumnat.copernic.cat');
+INSERT INTO usuario (edad, correo, contraseña, sexo, rol, id_instituto) VALUES ('33', 'admin@admin.com', 'admin', 'M', 'admin', 1);
+INSERT INTO usuario (edad, correo, contraseña, sexo, rol, id_instituto) VALUES ('18', 'usuario@usuario.com', 'usuario', 'H', 'usuario', 1);

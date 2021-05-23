@@ -1,3 +1,7 @@
+<?php
+require 'utiles/crear.php';
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -6,7 +10,8 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 			<link rel="stylesheet" type="text/css" href="css/main2.css">
       <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
-	</head>
+      <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
+    </head>
 <body>
 	<div id="pagina">
   <div id="cabecera">
@@ -40,31 +45,31 @@
     <hr>
 
         <div id="contenido3">
-          <form>
+          <form action="" method="post">
             <div class="form-group">
               <label for="titulo">Titulo: </label>
             </div>
-            <input type="text" class="form-control input-sm" id="titulo" placeholder="Titulo dilema">
+            <textarea type="text" name="titulo_dilema" class="form-control input-sm editor" id="titulo" placeholder="Titulo dilema"></textarea>
             <div class="form-group">
               <label for="resumen">Resumen: </label>
             </div>
-            <textarea class="form-control" id="resumen" cols="60" rows="3"></textarea>
+            <textarea name="resumen_dilema" class="form-control editor" id="resumen" cols="60" rows="3"></textarea>
             <div class="form-group">
               <label for="descripcion">Descripcion: </label>
             </div>
-            <textarea class="form-control" id="descripcion" cols="60" rows="6"></textarea>
+            <textarea name="descripcion_dilema" class="form-control editor" id="descripcion" cols="60" rows="6"></textarea>
             <div class="form-group">
               <label for="recursos">Recursos: </label>
             </div>
-            <textarea class="form-control" id="recursos" cols="60" rows="5"></textarea>
+            <textarea name="recurso_dilema" class="form-control editor" id="recursos" cols="60" rows="5"></textarea>
             <div class="form-group">
               <label for="actividad">Actividad: </label>
             </div>
-            <textarea class="form-control" id="actividad" cols="60" rows="6"></textarea>
+            <textarea class="form-control editor" id="actividad" cols="60" rows="6"></textarea>
             <br>
             <div class="button-container-2">
               <span class="mas">Crear</span>
-              <button id="work" type="button" name="Hover">Crear dilema</button>
+              <button id="work" type="submit" name="Hover">Crear dilema</button>
             </div>        
           </form>
         </div>
@@ -76,5 +81,15 @@
                 <div id="footerRedes" class="ContenidoFooter">Twitter</div>
         </div>
       </div>
+      <script>
+          var allEditors = document.querySelectorAll('.editor');
+          for (var i = 0; i < allEditors.length; ++i) {
+            ClassicEditor
+              .create(allEditors[i]);
+          }                   
+      </script>
+
+
+      
 </body>
 </html>

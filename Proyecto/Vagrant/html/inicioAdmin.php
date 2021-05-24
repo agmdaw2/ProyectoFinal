@@ -46,14 +46,14 @@
             </form>
         </div> -->
         <div id="contenido2">
-          <div class="button-container-1">
-            <span class="mas">Crear</span>
+          <div class="button-container-2" style="margin-left: 13%;">
+            <span class="mas">Crear dilema</span>
             <button id="work" type="button" name="Hover">Crear dilema</button>
           </div> 
 
-          <div class="button-container-1">
-            <span class="mas">Descargar</span>
-            <button id="work" type="button" name="Hover">Mirar respuestas</button>
+          <div class="button-container-2" style="margin-top: -6.8%;margin-left: 55%;">
+            <span class="mas">Consulta</span>
+            <button id="work" type="button" name="Hover">Consulta</button>
           </div> 
         </div>
     </div>

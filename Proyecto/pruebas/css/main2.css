@@ -362,7 +362,7 @@ html, body {
     border: 1px solid #000;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    transition: 0.5s;
+    transition: 0.7s;
     letter-spacing: 1px;
   }
   .button-container-2 button {

@@ -5,6 +5,7 @@
 		<title>Tecnoetica</title>
 			<link rel="stylesheet" type="text/css" href="css/main2.css">
       <link rel="stylesheet" type="text/css" href="css/main.css">
+      <meta charset="UTF-8">
 	</head>
 <body>
 	<div id="pagina">
@@ -40,20 +41,31 @@
           </div>
 
         <div id="contenido">
-          <div id="dilema1">
-            Dilema1
-          </div>
-          <div id="dilema2">
-            Dilema2
-          </div>
-          <div id="dilema3">
-            Dilema3
-          </div>
-          <div id="dilemaSeleccionado">
-            Resumen Dilema seleccionado
-          </div>
+          
+        <?php
+            $mysqli = new mysqli("localhost", "root", "password", "tecnoticos");
+            if ($mysqli->connect_errno) {
+                echo "Failed to connect to MySQL: " . $mysqli->connect_error;
+                exit();
+            }
+    
+            $sql = "SELECT titulo_dilema FROM dilema;";
+           
+            if ($result = $mysqli->query($sql)) {
+                while ($row = $result->fetch_row()) {
+                  echo('<div id="dilema1" style=">'.$row[0].'</div>');
+
+                }
+            }
+            $mysqli->close();
+        ?>
+
         </div>
-        
+
+        <div id="dilemaSeleccionado">
+            Resumen Dilema seleccionado
+        </div>
+
         <div class="Footer">
                 <div id="footerContacto" class="ContenidoFooter">Correo:</div>
                 <div id="footerCopy" class="ContenidoFooter">2021-2022 &copy; Tecnoetica</div>

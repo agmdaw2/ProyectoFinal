@@ -169,27 +169,11 @@ html, body {
   
   #dilema1 {
     padding-bottom:50px; /* este valor debe ser igual o mayor al alto del pie */
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 10px;
     margin-left: 18%;
     margin-right: 2%;
     margin-top: 5%;
-    width: 8%;
-    height: 2%;
-    border: 1px solid black;
-  }
-  #dilema2 {
-    padding-bottom:50px; /* este valor debe ser igual o mayor al alto del pie */
-    margin-left: 18%;
-    margin-right: 2%;
-    margin-top: 2%;
-    width: 8%;
-    height: 2%;
-    border: 1px solid black;
-  }
-  #dilema3 {
-    padding-bottom:50px; /* este valor debe ser igual o mayor al alto del pie */
-    margin-left: 18%;
-    margin-right: 2%;
-    margin-top: 2%;
     width: 8%;
     height: 2%;
     border: 1px solid black;
@@ -265,7 +249,7 @@ html, body {
 }
 
   .Footer{
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     left: 0;
     background-color: black;

@@ -37,6 +37,7 @@ CREATE TABLE pregunta (
   id_pregunta int AUTO_INCREMENT,
   texto_pregunta text NOT NULL,
 id_dilema int NOT NULL,
+tipo_numeracion VARCHAR(10),
 PRIMARY KEY (id_pregunta),
 FOREIGN KEY(id_dilema) REFERENCES dilema(id_dilema)
 );

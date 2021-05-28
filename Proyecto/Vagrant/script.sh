@@ -26,10 +26,10 @@ use tecnoticos;
 
 CREATE TABLE dilema (
   id_dilema int AUTO_INCREMENT,
-  titulo_dilema varchar(250) NOT NULL,
-  recurso_dilema text NOT NULL, 
-  resumen_dilema text NOT NULL,
-  descripcion_dilema text NOT NULL,
+  titulo_dilema varchar(250) CHARACTER SET utf8 NOT NULL,
+  recurso_dilema text CHARACTER SET utf8 NOT NULL, 
+  resumen_dilema text CHARACTER SET utf8 NOT NULL,
+  descripcion_dilema text CHARACTER SET utf8 NOT NULL,
 PRIMARY KEY (id_dilema)
 );
 

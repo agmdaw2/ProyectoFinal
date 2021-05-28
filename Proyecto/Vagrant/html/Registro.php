@@ -8,7 +8,7 @@
     <title>Registro - Tecnoetica</title>
 </head>
 <body>
-    <div id="Form-idiomas">
+    <!-- <div id="Form-idiomas">
         <form>
             <p>Idiomas:
             <select name="Idioma">
@@ -17,38 +17,33 @@
                 <option value="EN">Inglés</option>
                 </select></p>
         </form>
-    </div>
+    </div> -->
+    <div id="LogoLogin">
+            <img src="img/logotipo-blanco.png" alt="Logo" width="250px" height="100px">
+        </div>
+    
+    <form class="box" method="POST" id="Form-Registro">
     <div id="menu">
         <h1>Registro</h1>
-    </div>
-    
-    <form method="POST" id="Form-Registro">
-        <div id="LogoLogin">
-            <img src="img/Logotipo.png" alt="Logo" width="100px" height="50px">
-        </div>
+    </div><br>
         <p>Correo</p>
         <input type="email" name="email" placeholder="Correo electronico" required/>
         <p>Contraseña</p>
         <input type="password" name="pw" placeholder="Contraseña" required/>
         <p>Edad</p>
-        <input type="number" name="edad" required/>
+        <input type="number" name="edad" min="1" max="110" required/>
         <p>Sexo</p>
         <select name="sexo">
                 <option value="H">Hombre</option>
                 <option value="M">Mujer</option>
                 <option value="I">Indiferente</option>
         </select>
-        <br><br><br>
+        <br>
         <input type="submit" name="registrarse" action="Login.php" id="Registro" value="Registrarse" placeholder="Registrarse"><br>
         <p>¿Ya estás registrado? <a href="Login.php">Haz click aquí</a>.</p>
     </form>
     <?php
             include("registrar.php");
     ?>
-    <div class="Footer">
-        <div id="footerContacto" class="ContenidoFooter">Correo:</div>
-        <div id="footerCopy" class="ContenidoFooter">2021-2022 &copy; Tecnoetica</div>
-        <div id="footerRedes" class="ContenidoFooter">Twitter</div>
-</div>
 </body>
 </html>

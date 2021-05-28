@@ -9,7 +9,7 @@
     <title>Login - Tecnoetica</title>
 </head>
 <body>
-    <div id="Form-idiomas">
+    <!-- <div id="Form-idiomas">
         <form>
             <p>Idiomas:
             <select name="Idioma">
@@ -18,30 +18,25 @@
                 <option value="EN">Inglés</option>
                 </select></p>
         </form>
-    </div>
-    <div id="menu">
-        <h1>Login</h1>
+    </div> -->
+    <div id="LogoLogin">
+        <img src="img/logotipo-blanco.png" alt="Logo" width="250px" height="100px">    
     </div>
     
-    <form id="Form-Login" action="Login.php" method="post">
-        <div id="LogoLogin">
-            <img src="img/logotipo.png" alt="Logo" width="100px" height="45px">
-            
-        </div>
+    <form class="box" id="Form-Login" action="Login.php" method="post">
+        <div id="menu">
+            <h1>Login</h1>
+        </div><br>
         <p>Correo</p>
         <input type="email" name="t1" placeholder="Correo electronico" required>
         <p>Contraseña</p>
-        <input type="password" name="t2" placeholder="Contraseña" required><br><br><br>
+        <input type="password" name="t2" placeholder="Contraseña" required><br><br>
         <button type="submit" id="Login" name="" value="Ingresar">Entrar</button>
         <input type="button" id=Registro onclick="window.location.href='Registro.php';" value="Registrarse" />
         <p>¿Quieres volver al Inicio? <a href="index.html">Haz click aquí</a>.</p>
         
     </form>
-    <div class="Footer">
-        <div id="footerContacto" class="ContenidoFooter">Correo:</div>
-        <div id="footerCopy" class="ContenidoFooter">2021-2022 &copy; Tecnoetica</div>
-        <div id="footerRedes" class="ContenidoFooter">Twitter</div>
-</div>
+    
 </body>
 <?php
         if($_POST){

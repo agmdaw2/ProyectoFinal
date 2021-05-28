@@ -5,7 +5,7 @@
         $titulo_dilema = $_POST['titulo_dilema'];
         
         // Create connection
-        $conn = new mysqli("localhost", "root", "password", "tecnoticos");
+        $conn = new mysqli("localhost", "root", "admin123", "tecnoticos");
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -27,11 +27,11 @@
                     } else {
                         echo "Error: " . $sql . "<br>" . $conn->error;
                     }
-
+                    
                     // SEGUNDA CONEXION para añadir la actividad del dilema
                     if((isset($_POST['actividad_dilema']) && !empty($_POST['actividad_dilema']))){
                         $actividades = $_POST['actividad_dilema'];
-
+                        
                         $ultimoID = 0;
                         
                         $consulta = "SELECT MAX(id_dilema) AS id_dilema FROM dilema";
@@ -47,12 +47,10 @@
 
                         // Averiguaremos de que tipo de Enumeracion sera
                         if(strlen(strstr($actividades,'<ul>'))>0){
-                            echo "UL ";
                             $tipoNumeracion= '<ul>';
                         }
 
                         if(strlen(strstr($actividades,'<ol>'))>0){
-                            echo "OL ";
                             $tipoNumeracion= '<ol>';
                         }
 
@@ -62,34 +60,47 @@
 
                         if($li = $dom->getElementsByTagName('li')){
                             foreach($li as $list){
-                                echo $list->nodeValue, PHP_EOL;
-                                echo "LI ";
-                                $sqldos = "INSERT INTO pregunta (texto_pregunta, tipo_numeracion, id_dilema)  
-                                VALUES ('$list->nodeValue', '$tipoNumeracion', '$ultimoID')";
-                                if ($conn->query($sqldos) === TRUE) {
+                                //echo $list->nodeValue, PHP_EOL;
+                                $cadena = $list->nodeValue;
+                                echo $cadena;
+                                for($i=0;$i<strlen($cadena);$i++){
+                                    if($cadena[$i]=="'"){
+                                        $cadena[$i]=="\'";
+                                    }
+                                }
+                                $sql = "INSERT INTO pregunta (texto_pregunta, tipo_numeracion, id_dilema)  
+                                VALUES ('$cadena', '$tipoNumeracion', '$ultimoID')";
+                                
+                                if ($conn->query($sql) === TRUE) {
                                 } else {
-                                    echo "Error: " . $sqldos . "<br>" . $conn->error;
+                                    echo "Error: " . $sql . "<br>" . $conn->error;
                                 }
                             }
                         }
 
                         if($p = $dom ->getElementsByTagName('p')){
                             foreach($p as $list){
-                                echo $list->nodeValue, PHP_EOL;
-                                echo "P ";
-                                $sqldos = "INSERT INTO pregunta (texto_pregunta, tipo_numeracion, id_dilema)  
-                                VALUES ('$list->nodeValue', '$tipoNumeracion', '$ultimoID')";
-                                if ($conn->query($sqldos) === TRUE) {
+                                //echo $list->nodeValue, PHP_EOL;
+                                $cadena = $list->nodeValue;
+                                echo $cadena;
+                                for($i=0;$i<strlen($cadena);$i++){
+                                    if($cadena[$i]=="'"){
+                                        $cadena[$i]=="\'";
+                                    }
+                                }
+                                $sql = "INSERT INTO pregunta (texto_pregunta, tipo_numeracion, id_dilema)  
+                                VALUES ('$cadena', '$tipoNumeracion', '$ultimoID')";
+                                if ($conn->query($sql) === TRUE) {
                                 } else {
-                                    echo "Error: " . $sqldos . "<br>" . $conn->error;
+                                    echo "Error: " . $sql . "<br>" . $conn->error;
                                 }
                             }
                         }
 
-                        $conn->close();
                     }
                 }
             }
         }
+        $conn->close();
     }
 ?>

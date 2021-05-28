@@ -1,5 +1,9 @@
-<!DOCTYPE html>
+<?php
+    session_start();
+    if(isset($_SESSION["usuario"])){
+?>
 
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Tecnoetica</title>

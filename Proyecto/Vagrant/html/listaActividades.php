@@ -1,14 +1,16 @@
+<?php
+  session_start();
+  if(isset($_SESSION["usuario"])){
+?>
+
 <!DOCTYPE html>
-
 <html>
-
 <head>
   <title>Tecnoetica</title>
   <link rel="stylesheet" type="text/css" href="css/main2.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <meta charset="UTF-8">
 </head>
-
 <body>
   <div id="pagina">
     <div id="cabecera">

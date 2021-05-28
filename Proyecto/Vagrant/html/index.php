@@ -1,5 +1,9 @@
-<!DOCTYPE html>
+<?php
+    session_start();
+    if(isset($_SESSION["usuario"])){
+?>
 
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Tecnoetica</title>
@@ -14,6 +18,11 @@
         </div>
         <div class="Login-Registro">
             <a href="Login.php"><img src="img/Perfil.png" alt="Perfil" width="50px" height="50px"></a>
+            <?php
+                if(isset($_SESSION["usuario"])){
+                    echo'<a href="logout.php"><img src="img/logout.png" alt="Logout" width="50px" height="50px"></a>';
+                }
+            ?>
         </div>
         <div class="navbar">
             <div class="subnav">
@@ -29,7 +38,7 @@
                 <button class="subnavbtn" onclick="window.location.href='tecnoeticaFutura.php'">Tecnoetica Futura<i class="fa fa-caret-down"></i></button>
             </div>
             <div class="subnav">
-                <button class="subnavbtn" onclick="window.location.href='Bcontacto.php'">Contacto<i class="fa fa-caret-down"></i></button>
+                <button class="subnavbtn" onclick="window.location.href='contacto.php'">Contacto<i class="fa fa-caret-down"></i></button>
             </div>
           </div>
         <hr><br>

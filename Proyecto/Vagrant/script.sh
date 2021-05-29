@@ -8,6 +8,9 @@ sed -i 's/AllowOverride None/AllowOverride All/' /etc/apache2/sites-available/de
 apt -y install libapache2-mod-php
 a2enmod php7.2
 
+#Install php-dom
+apt-get install php-dom
+
 #Install mySQL
 apt-get update -y
 debconf-set-selections <<< 'mysql-server-<version> mysql-server/root_password password password'
@@ -73,7 +76,7 @@ FOREIGN KEY (id_pregunta) REFERENCES pregunta(id_pregunta),
 FOREIGN KEY (id_dilema) REFERENCES dilema(id_dilema)
 );
 
-INSERT INTO instituto (nombre_instituto, dominio_instituto) VALUES ('INS Nicolau Copernic', 'alumnat.copernic.cat');
+INSERT INTO instituto (nombre_instituto, dominio_instituto) VALUES ('INS Nicolau Copernic', 'alumnat.copernic');
 
 INSERT INTO usuario (edad, correo, contraseña, sexo, rol, id_instituto) VALUES ('33', 'admin@admin.com', 'admin', 'M', 'admin', 1);
 INSERT INTO usuario (edad, correo, contraseña, sexo, rol, id_instituto) VALUES ('18', 'usuario@usuario.com', 'usuario', 'H', 'usuario', 1);

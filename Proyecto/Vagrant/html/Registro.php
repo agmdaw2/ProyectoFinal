@@ -18,6 +18,16 @@
                 </select></p>
         </form>
     </div> -->
+    <?php
+        $email= "prueba@alumnat.copernic.cat";
+        echo "hola";
+        echo $email;
+        $dominio= explode("@ ", $email);
+        $instituto = explode(".", $dominio[1]);
+        $instituto_limpio = array_pop($instituto);
+        echo $instituto;
+        echo $instituto_limpio;
+    ?>
     <div id="LogoLogin">
             <img src="img/logotipo-blanco.png" alt="Logo" width="250px" height="100px">
         </div>
@@ -43,7 +53,7 @@
         <p>¿Ya estás registrado? <a href="Login.php">Haz click aquí</a>.</p>
     </form>
     <?php
-            include("registrar.php");
+        include("registrar.php");
     ?>
 </body>
 </html>

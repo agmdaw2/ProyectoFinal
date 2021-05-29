@@ -240,14 +240,34 @@ input[name=search] {
 
 /*Tarjetas giratorias*/
 
-.Flip-cards,.front-face,
-.contents,.back-face{
+.Flip-cards,.Flip-cards2,.front-face,
+.contents,.back-face,.Flip-cards3{
   position: absolute;
 }
 
 .Flip-cards{
   margin-top: 12%;
   margin-left: 25%;
+  transform: translate(-50%, -50%);
+  height: 400px;
+  width: 290px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.Flip-cards2{
+  margin-top: 12%;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+  height: 400px;
+  width: 290px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.Flip-cards3{
+  margin-top: 12%;
+  margin-left: 75%;
   transform: translate(-50%, -50%);
   height: 400px;
   width: 290px;
@@ -267,6 +287,7 @@ input[name=search] {
   transform-style: preserve-3d;
   transition: transform .7s cubic-bezier(.4,.2,.2,1);
 }
+
 
 .contents{
   left: 0;
@@ -324,6 +345,21 @@ input[name=search] {
   transform: rotateY(-180deg);
 }
 
+.Flip-cards2:hover > .back-face{
+  transform: rotateY(0deg);
+}
+
+.Flip-cards2:hover > .front-face{
+  transform: rotateY(-180deg);
+}
+
+.Flip-cards3:hover > .back-face{
+  transform: rotateY(0deg);
+}
+
+.Flip-cards3:hover > .front-face{
+  transform: rotateY(-180deg);
+}
 /*Footer*/
 
 .Footer{

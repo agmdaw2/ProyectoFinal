@@ -61,15 +61,15 @@
                         if($li = $dom->getElementsByTagName('li')){
                             foreach($li as $list){
                                 //echo $list->nodeValue, PHP_EOL;
-                                $cadena = $list->nodeValue;
-                                echo $cadena;
-                                for($i=0;$i<strlen($cadena);$i++){
-                                    if($cadena[$i]=="'"){
-                                        $cadena[$i]=="\'";
-                                    }
-                                }
+                                // $cadena = $list->nodeValue;
+                                // echo $cadena;
+                                // for($i=0;$i<strlen($cadena);$i++){
+                                //     if($cadena[$i]=="'"){
+                                //         $cadena[$i]=="\'";
+                                //     }
+                                // }
                                 $sql = "INSERT INTO pregunta (texto_pregunta, tipo_numeracion, id_dilema)  
-                                VALUES ('$cadena', '$tipoNumeracion', '$ultimoID')";
+                                VALUES ('$list->nodeValue', '$tipoNumeracion', '$ultimoID')";
                                 
                                 if ($conn->query($sql) === TRUE) {
                                 } else {
@@ -81,15 +81,15 @@
                         if($p = $dom ->getElementsByTagName('p')){
                             foreach($p as $list){
                                 //echo $list->nodeValue, PHP_EOL;
-                                $cadena = $list->nodeValue;
-                                echo $cadena;
-                                for($i=0;$i<strlen($cadena);$i++){
-                                    if($cadena[$i]=="'"){
-                                        $cadena[$i]=="\'";
-                                    }
-                                }
+                                // $cadena = $list->nodeValue;
+                                // echo $cadena;
+                                // for($i=0;$i<strlen($cadena);$i++){
+                                //     if($cadena[$i]=="'"){
+                                //         $cadena[$i]=="\'";
+                                //     }
+                                // }
                                 $sql = "INSERT INTO pregunta (texto_pregunta, tipo_numeracion, id_dilema)  
-                                VALUES ('$cadena', '$tipoNumeracion', '$ultimoID')";
+                                VALUES ('$list->nodeValue', '$tipoNumeracion', '$ultimoID')";
                                 if ($conn->query($sql) === TRUE) {
                                 } else {
                                     echo "Error: " . $sql . "<br>" . $conn->error;

@@ -15,7 +15,7 @@
 <body>
 	<div id="pagina">
         <div id="cabecera">
-            <a href="index.php"><img src="img/logotipo.png" alt="logo" width="300px" height="90px"></a>
+            <img src="img/logotipo.png" alt="logo" width="300px" height="90px">
         </div>
         <div class="Login-Registro">
             <a href="Login.php"><img src="img/Perfil.png" alt="Perfil" width="50px" height="50px"></a>
@@ -92,11 +92,39 @@
                 </div>
             </div>
         </div>
+        <div class="Flip-cards2">
+            <div class="front-face">
+                <div class="contents front">
+                    <p>Segundo</p>
+                    <span>Segundo 1</span>
+                </div>
+            </div>
+            <div class="back-face">
+                <div class="contents back">
+                    <h2>Segundo atras</h2>
+                    <span>Segundo 2</span>
+                </div>
+            </div>
+        </div>
+        <div class="Flip-cards3">
+            <div class="front-face">
+                <div class="contents front">
+                    <p>Tercero</p>
+                    <span>Tercero 1</span>
+                </div>
+            </div>
+            <div class="back-face">
+                <div class="contents back">
+                    <h2>Tercero atras</h2>
+                    <span>Tercero 2</span>
+                </div>
+            </div>
+        </div>
 
         <br>
         
         <div class="Footer" style="margin-top: 25%">
-                <div id="footerContacto" class="ContenidoFooter">Correo:</div>
+                <div id="footerContacto" class="ContenidoFooter">Correo: eramire1@xtec.cat</div>
                 <div id="footerCopy" class="ContenidoFooter">2021-2022 &copy; Tecnoetica</div>
                 <div id="footerRedes" class="ContenidoFooter">Twitter</div>
         </div>

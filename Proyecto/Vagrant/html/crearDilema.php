@@ -17,10 +17,15 @@ require 'utiles/crear.php';
 <body>
   <div id="pagina">
     <div id="cabecera">
-      <a href="Login.html"><img src="img/logotipo.png" alt="logo" width="300px" height="90px"></a>
+      <a href="index.php"><img src="img/logotipo.png" alt="logo" width="300px" height="90px"></a>
     </div>
     <div class="Login-Registro">
-      <img src="img/Perfil.png" alt="Perfil" width="50px" height="50px">
+      <a href="Login.php"><img src="img/Perfil.png" alt="Perfil" width="50px" height="50px"></a>
+      <?php
+        if(isset($_SESSION["usuario"])){
+          echo'<a href="logout.php"><img src="img/logout.png" alt="Logout" width="50px" height="50px"></a>';
+        }
+      ?>
     </div>
     <div class="navbar">
       <div class="subnav">

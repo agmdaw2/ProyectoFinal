@@ -39,7 +39,7 @@
                 <option value="I">Indiferente</option>
         </select>
         <br>
-        <input type="submit" name="registrarse" action="Login.php" id="Registro" value="Registrarse" placeholder="Registrarse"><br>
+        <input type="submit" name="registrarse" action="Login.php" id="Registro" value="registrarse" placeholder="registrarse"><br>
         <p>¿Ya estás registrado? <a href="Login.php">Haz click aquí</a>.</p>
     </form>
     <?php

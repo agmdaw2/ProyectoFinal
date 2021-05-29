@@ -14,7 +14,7 @@ try {
 
 
 if(isset($_POST['registrarse'])){
-    if (strlen($_POST['edad']) >= 1 && strlen($_POST['email']) >= 1 && strlen($_POST['pw']) >= 1 && strlen($_POST['email']) >= 1)  
+    if (strlen($_POST['edad']) >= 1 && strlen($_POST['email']) >= 1 && strlen($_POST['pw']) >= 1 && strlen($_POST['sexo']) >= 1)  
     {
         $edad = trim($_POST['edad']);
         $email = trim($_POST['email']);
@@ -36,7 +36,6 @@ if(isset($_POST['registrarse'])){
             ?>
             <h3> "Registro correcto" </h3>
             <?php
-            header("location: login.php");
         } else {
             ?>
             <h3> "Registro no ha sido posible, intente de nuevo" </h3>

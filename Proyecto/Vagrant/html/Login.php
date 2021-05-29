@@ -57,7 +57,7 @@
                 $_SESSION['user_id'] = $usuario['id_usuario'];
                 
                 if($usuario['rol'] == "admin"){
-                    header("location:index.html");
+                    header("location:inicioAdmin.php");
                 }
                 else if($usuario['rol'] == "usuario"){
                     header("location:index.php");

@@ -15,7 +15,7 @@
 <body>
 	<div id="pagina">
         <div id="cabecera">
-            <img src="img/logotipo.png" alt="logo" width="300px" height="90px">
+            <a href="index.php"><img src="img/logotipo.png" alt="logo" width="300px" height="90px"></a>
         </div>
         <div class="Login-Registro">
             <a href="Login.php"><img src="img/Perfil.png" alt="Perfil" width="50px" height="50px"></a>

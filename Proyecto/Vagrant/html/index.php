@@ -95,7 +95,7 @@
 
         <br>
         
-        <div class="Footer">
+        <div class="Footer" style="margin-top: 25%">
                 <div id="footerContacto" class="ContenidoFooter">Correo:</div>
                 <div id="footerCopy" class="ContenidoFooter">2021-2022 &copy; Tecnoetica</div>
                 <div id="footerRedes" class="ContenidoFooter">Twitter</div>

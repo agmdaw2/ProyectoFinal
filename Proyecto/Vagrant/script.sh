@@ -9,7 +9,7 @@ apt -y install libapache2-mod-php
 a2enmod php7.2
 
 #Install mySQL
-apt-get uptade -y
+apt-get update -y
 debconf-set-selections <<< 'mysql-server-<version> mysql-server/root_password password password'
 debconf-set-selections <<< 'mysql-server-<version> mysql-server/root_password_again password password'
 apt-get install -y mariadb-server mariadb-client
@@ -35,7 +35,7 @@ PRIMARY KEY (id_dilema)
 
 CREATE TABLE pregunta (
   id_pregunta int AUTO_INCREMENT,
-  texto_pregunta text NOT NULL,
+  texto_pregunta text CHARACTER SET utf8 NOT NULL,
 id_dilema int NOT NULL,
 tipo_numeracion VARCHAR(10),
 PRIMARY KEY (id_pregunta),

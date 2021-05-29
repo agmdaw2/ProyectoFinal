@@ -18,23 +18,23 @@
         </div>
     <div class="navbar">
       <div class="subnav">
-        <button class="subnavbtn" onclick="window.location.href='Inicio.html'">Inicio <i
+        <button class="subnavbtn" onclick="window.location.href='index.php'">Inicio <i
             class="fa fa-caret-down"></i></button>
       </div>
       <div class="subnav">
-        <button class="subnavbtn" onclick="window.location.href='Productes.html'">Dilemas Tecnoeticos<i
+        <button class="subnavbtn" onclick="window.location.href='listaActividades.php'">Dilemas Tecnoeticos<i
             class="fa fa-caret-down"></i></button>
       </div>
       <div class="subnav">
-        <button class="subnavbtn" onclick="window.location.href='Nosotros.html'">Propuesta Didactica<i
+        <button class="subnavbtn" onclick="window.location.href='propuestaDidactica.php'">Propuesta Didactica<i
             class="fa fa-caret-down"></i></button>
       </div>
       <div class="subnav">
-        <button class="subnavbtn" onclick="window.location.href='Exercicis.html'">Tecnoetica Futura<i
+        <button class="subnavbtn" onclick="window.location.href='tecnoeticaFutura.php'">Tecnoetica Futura<i
             class="fa fa-caret-down"></i></button>
       </div>
       <div class="subnav">
-        <button class="subnavbtn" onclick="window.location.href='Blabla.html'">Contacto<i
+        <button class="subnavbtn" onclick="window.location.href='contacto.php'">Contacto<i
             class="fa fa-caret-down"></i></button>
       </div>
     </div>

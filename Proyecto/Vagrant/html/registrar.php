@@ -36,6 +36,7 @@ if(isset($_POST['registrarse'])){
             ?>
             <h3> "Registro correcto" </h3>
             <?php
+            header("location: login.php");
         } else {
             ?>
             <h3> "Registro no ha sido posible, intente de nuevo" </h3>

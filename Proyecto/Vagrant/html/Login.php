@@ -60,7 +60,7 @@
                     header("location:index.html");
                 }
                 else if($usuario['rol'] == "usuario"){
-                    header("location:index.html");
+                    header("location:index.php");
                 }
             }
             else {

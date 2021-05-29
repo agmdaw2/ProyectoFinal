@@ -24,7 +24,7 @@ require 'utiles/crear.php';
     </div>
     <div class="navbar">
       <div class="subnav">
-        <button class="subnavbtn" onclick="window.location.href='Inicio.html'">Inicio <i class="fa fa-caret-down"></i></button>
+        <button class="subnavbtn" onclick="window.location.href='index.php'">Inicio <i class="fa fa-caret-down"></i></button>
       </div>
       <div class="subnav">
         <button class="subnavbtn" onclick="window.location.href='listaActividades.php'">Dilemas Tecnoeticos<i class="fa fa-caret-down"></i></button>
@@ -36,7 +36,7 @@ require 'utiles/crear.php';
         <button class="subnavbtn" onclick="window.location.href='tecnoeticaFutura.php'">Tecnoetica Futura<i class="fa fa-caret-down"></i></button>
       </div>
       <div class="subnav">
-        <button class="subnavbtn" onclick="window.location.href='Blabla.html'">Contacto<i class="fa fa-caret-down"></i></button>
+        <button class="subnavbtn" onclick="window.location.href='contacto.php'">Contacto<i class="fa fa-caret-down"></i></button>
       </div>
     </div>
     <hr>

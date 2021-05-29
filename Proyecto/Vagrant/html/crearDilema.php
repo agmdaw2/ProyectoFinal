@@ -67,7 +67,7 @@ require 'utiles/crear.php';
         <div class="form-group">
           <label for="actividad">Actividad: </label>
         </div>
-        <textarea class="form-control editor" id="actividad" cols="60" rows="6"></textarea>
+        <textarea name="actividad_dilema" class="form-control editor" id="actividad" cols="60" rows="6"></textarea>
         <br>
         <div class="button-container-2">
           <span class="mas">Crear</span>

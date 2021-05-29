@@ -60,18 +60,7 @@
 
                         if($li = $dom->getElementsByTagName('li')){
                             foreach($li as $list){
-<<<<<<< HEAD
                                 echo $list->nodeValue, PHP_EOL;
-=======
-                                //echo $list->nodeValue, PHP_EOL;
-                                // $cadena = $list->nodeValue;
-                                // echo $cadena;
-                                // for($i=0;$i<strlen($cadena);$i++){
-                                //     if($cadena[$i]=="'"){
-                                //         $cadena[$i]=="\'";
-                                //     }
-                                // }
->>>>>>> 65c97bd830041161e4a513c4a5b578aa26c06ffd
                                 $sql = "INSERT INTO pregunta (texto_pregunta, tipo_numeracion, id_dilema)  
                                 VALUES ('$list->nodeValue', '$tipoNumeracion', '$ultimoID')";
                                 
@@ -84,18 +73,7 @@
 
                         if($p = $dom ->getElementsByTagName('p')){
                             foreach($p as $list){
-<<<<<<< HEAD
                                 echo $list->nodeValue, PHP_EOL;
-=======
-                                //echo $list->nodeValue, PHP_EOL;
-                                // $cadena = $list->nodeValue;
-                                // echo $cadena;
-                                // for($i=0;$i<strlen($cadena);$i++){
-                                //     if($cadena[$i]=="'"){
-                                //         $cadena[$i]=="\'";
-                                //     }
-                                // }
->>>>>>> 65c97bd830041161e4a513c4a5b578aa26c06ffd
                                 $sql = "INSERT INTO pregunta (texto_pregunta, tipo_numeracion, id_dilema)  
                                 VALUES ('$list->nodeValue', '$tipoNumeracion', '$ultimoID')";
                                 if ($conn->query($sql) === TRUE) {

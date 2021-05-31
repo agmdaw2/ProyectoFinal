@@ -74,3 +74,79 @@ h| Ivan a|. HTML/CSS *(3h)* +
 
 
 |====
+
+== 21/05/21
+
+[cols="1,1,4"]
+|====
+.3+^.^h| Seguimiento h| Antonio a|. Pruebas con ckEditor *(2h)* +
+. Arreglo para el envio y consulta con ckEditor mediante php *(4h)* +
+h| Adrià a| . Registro *(4h)* +
+. Login *(2h)* +
+h| Ivan a|. HTML/CSS *(4h)* +
+. PHP *(2h)*
+
+
+|====
+== 24/05/21
+
+[cols="1,1,4"]
+|====
+.3+^.^h| Seguimiento h| Antonio a|. Pruebas con ckEditor *(2h)* +
+. Arreglo para el envio y consulta con ckEditor mediante php *(4h)* +
+h| Adrià a| . Registro *(4h)* +
+. Login *(2h)* +
+h| Ivan a|
+. PHP, JS y CSS *(3h)*
+
+
+|====
+== 25/05/21
+
+[cols="1,1,4"]
+|====
+.3+^.^h| Seguimiento h| Antonio a|. Pruebas con ckEditor *(2h)* +
+. Arreglo para el envio y consulta con ckEditor mediante php *(4h)* +
+h| Adrià a| . Registro *(4h)* +
+. Login *(2h)* +
+h| Ivan a|. PHP, JS y CSS *(2h)*
+
+
+|====
+== 26/05/21
+
+[cols="1,1,4"]
+|====
+.3+^.^h| Seguimiento h| Antonio a|. Pruebas con ckEditor *(2h)* +
+. Arreglo para el envio y consulta con ckEditor mediante php *(4h)* +
+h| Adrià a| . Registro *(4h)* +
+. Login *(2h)* +
+h| Ivan a|. PHP, JS y CSS (3h)
+
+
+|====
+== 28/05/21
+
+[cols="1,1,4"]
+|====
+.3+^.^h| Seguimiento h| Antonio a|. Pruebas con ckEditor *(2h)* +
+. Arreglo para el envio y consulta con ckEditor mediante php *(4h)* +
+h| Adrià a| . Registro *(4h)* +
+. Login *(2h)* +
+h| Ivan a|. PHP, JS y CSS (5h)
+
+
+|====
+
+== 31/05/21
+
+[cols="1,1,4"]
+|====
+.3+^.^h| Seguimiento h| Antonio a|. Pruebas con ckEditor *(2h)* +
+. Arreglo para el envio y consulta con ckEditor mediante php *(4h)* +
+h| Adrià a| . Registro *(4h)* +
+. Login *(2h)* +
+h| Ivan a|. Presentacion *(3h)*
+
+
+|====

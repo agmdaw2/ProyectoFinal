@@ -121,7 +121,7 @@ h| Ivan a|. PHP, JS y CSS *(2h)*
 . Arreglo para el envio y consulta con ckEditor mediante php *(4h)* +
 h| Adrià a| . Registro *(4h)* +
 . Login *(2h)* +
-h| Ivan a|. PHP, JS y CSS (3h)
+h| Ivan a|. PHP, JS y CSS *(3h)*
 
 
 |====
@@ -133,7 +133,7 @@ h| Ivan a|. PHP, JS y CSS (3h)
 . Arreglo para el envio y consulta con ckEditor mediante php *(4h)* +
 h| Adrià a| . Registro *(4h)* +
 . Login *(2h)* +
-h| Ivan a|. PHP, JS y CSS (5h)
+h| Ivan a|. PHP, JS y CSS *(5h)*
 
 
 |====

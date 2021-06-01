@@ -5,7 +5,7 @@
         $titulo_dilema = $_POST['titulo_dilema'];
         
         // Create connection
-        $conn = new mysqli("localhost", "root", "password", "tecnoticos");
+        $conn = new mysqli("localhost", "root", "admin", "tecnoticos");
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);

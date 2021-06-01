@@ -51,7 +51,6 @@ require 'utiles/respPreg.php';
             <div id="contenido4">
                 <?php
                     $idDilema = $_GET["dilema"];
-                    //Para llegar hasta aqui por el momento necesitamos esta url
                     //http://localhost/m12/respPreguntas.php?dilema=1
                     
                     respPreg($idDilema, $estoyLogeado);

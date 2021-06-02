@@ -20,8 +20,6 @@ Bienvenidos a nuestro proyecto para la realización de Fichas orientadas a un es
   
 
 image::img/all.png[LogoAll, 40%] 
-image::img/node.png[LogonodeJS, 40%]
-image::img/bootstrap.png[Logobootstrap, 20%]
 image::img/php.png[Logophp, 30%]
 image::img/mysql.png[Logomysql, 30%]
 --

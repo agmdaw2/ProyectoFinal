@@ -360,6 +360,21 @@ input[name=search] {
 .Flip-cards3:hover > .front-face{
   transform: rotateY(-180deg);
 }
+
+/*Contacto*/
+
+#lineaContacto{
+  content: '';
+  display: block;
+  left: 0;
+  right: 0;
+  height: 2px;
+  width: 100px;
+  background:black;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
 /*Footer*/
 
 .Footer{

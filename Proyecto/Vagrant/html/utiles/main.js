@@ -13,25 +13,24 @@ function tipoSelectorEdad(){
         label.innerHTML='Elige el rango de edad';
         inputDos = document.createElement('input');
         inputDos.setAttribute('type', 'number');
-        inputDos.setAttribute('name', 'min');
+        inputDos.setAttribute('name', 'filtro[R][edadmax]');
         inputDos.setAttribute('min', '10');
         inputDos.setAttribute('max', '100');
         inputDos.setAttribute('placeholder', 'maximo');
-        inputDos.setAttribute('name','filtro[edadMax]');
+
         input = document.createElement('input');
         input.setAttribute('type', 'number');
-        input.setAttribute('name', 'min');
+        input.setAttribute('name', 'filtro[R][edadmin]');
         input.setAttribute('min', '10');
         input.setAttribute('max', '100');
         input.setAttribute('placeholder', 'minimo');
-        input.setAttribute('name','filtro[edadMin]');
     }
 
     if(tipo=='S'){
         label.innerHTML='Elige la edad';
         input = document.createElement('input');
         input.setAttribute('type', 'number');
-        input.setAttribute('name', 'min');
+        input.setAttribute('name', 'filtro[S][edad]');
         input.setAttribute('min', '10');
         input.setAttribute('max', '100');
         input.setAttribute('placeholder', 'edad');
@@ -67,3 +66,42 @@ function preguntas(idDilema){
           }
     }
 }
+
+function exportTableToExcel(tableID, nombreArchivo){
+    var downloadLink;
+    var dataType = 'application/vnd.ms-excel';
+    var tableSelect = document.getElementById(tableID);
+    var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+    
+    // Especificar fecha
+    n =  new Date();
+        //Año
+    y = n.getFullYear();
+        //Mes
+    m = n.getMonth() + 1;
+        //Día
+    d = n.getDate();
+    nombreArchivo = nombreArchivo+"."+d+"/"+m+"/"+y;
+    
+    // Create download link element
+    downloadLink = document.createElement("a");
+    
+    document.body.appendChild(downloadLink);
+    
+    if(navigator.msSaveOrOpenBlob){
+        var blob = new Blob(['ufeff', tableHTML], {
+            type: dataType
+        });
+        navigator.msSaveOrOpenBlob( blob, nombreArchivo);
+    }else{
+        // Create a link to the file
+        downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+    
+        // Setting the file name
+        downloadLink.download = nombreArchivo;
+        
+        //triggering the function
+        downloadLink.click();
+    }
+}
+

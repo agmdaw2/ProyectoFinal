@@ -47,64 +47,40 @@ require 'utiles/filtros.php';
                         class="fa fa-caret-down"></i></button>
             </div>
         </div>
+
+        <!-- <table id="tblData">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Country</th>
+            </tr>
+            <tr>
+                <td>John Doe</td>
+                <td>john@gmail.com</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td>Michael Addison</td>
+                <td>michael@gmail.com</td>
+                <td>UK</td>
+            </tr>
+            <tr>
+                <td>Sam Farmer</td>
+                <td>sam@gmail.com</td>
+                <td>France</td>
+            </tr>
+        </table> -->
+
         <div id="contenidoFiltros">
             <?php
                 filtrar();
                 imprimirScript();
             ?>
         </div>   
-
-        <!-- <div id="consulta" class="form-group">
-            <h3 style="text-align: center;">Consulta</h3>
-            <form>
-                <label for="sexo">Sexo</label><br><br>
-                <input type="checkbox" id="todos" class="form-control" name="sexo" value="Todos">Todos<br>
-                <input type="checkbox" id="masculino" class="form-control" name="sexo" value="Masculino">Masculino<br>
-                <input type="checkbox" id="femenino" class="form-control" name="sexo" value="Femenino">Femenino<br>
-                <input type="checkbox" id="otros" class="form-control" name="sexo" value="Otros">Otros
-            </form>
-
-            <form id="cedad">
-                <label for="edad">Edad</label><br><br>
-                <input type="checkbox" id="todos" class="form-control" name="sexo" value="Todos">Todos<br>
-                <input type="checkbox" id="masculino" class="form-control" name="sexo" value="Masculino">Masculino<br>
-                <input type="checkbox" id="femenino" class="form-control" name="sexo" value="Femenino">Femenino<br>
-                <input type="checkbox" id="otros" class="form-control" name="sexo" value="Otros">Otros
-            </form>
-
-            <form id="cinstituto">
-                <label for="instituto">Instituto</label><br><br>
-                <select id="cars" name="cars" size="1">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="fiat">Fiat</option>
-                    <option value="audi">Audi</option>
-                  </select>
-            </form>
+        <div class='button-container-2' style="display:none">
+        <span class='mas'>Descargar</span>
+        <button id='work' type=button' name='Hover' onclick="exportTableToExcel('tablaContenido', 'consulta')">Descargar</button>
         </div>
-
-        <div id="dilema" class="form-group">
-            <h3 style="text-align: center;">Dilemas</h3>
-            <form id="cdilema">
-                <label for="dilema">Dilema</label><br><br>
-                <select id="cars" name="cars" size="1">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="fiat">Fiat</option>
-                    <option value="audi">Audi</option>
-                  </select>
-            </form>
-            <form id="cpregunta">
-                <label for="pregunta">Pregunta</label><br><br>
-                <select id="cars" name="cars" size="1">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="fiat">Fiat</option>
-                    <option value="audi">Audi</option>
-                  </select>
-            </form>
-        </div> -->
-
         <div class="Footer">
             <div id="footerContacto" class="ContenidoFooter">Correo:</div>
             <div id="footerCopy" class="ContenidoFooter">2021-2022 &copy; Tecnoetica</div>

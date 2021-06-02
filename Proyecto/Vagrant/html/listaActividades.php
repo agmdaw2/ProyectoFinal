@@ -53,13 +53,13 @@
         exit();
       }
 
-      $sql = "SELECT titulo_dilema FROM dilema;";
+      $sql = "SELECT id_dilema, titulo_dilema FROM dilema;";
 
 
       if ($result = $mysqli->query($sql)) {
         $count = 1;
         while ($row = $result->fetch_row()) {
-          echo ('<div id="dilema' . $count . '" class="titulo" onMouseEnter="mouseOver('. $count++ .')">' . $row[0] . '</div>');
+          echo ('<div id="dilema' . $count . '" class="titulo" onMouseEnter="mouseOver('. $count .')"><a class="links" href="respPreguntas.php?Dilema='. $row[0] .'">' . $row[1] . '</a></div>');
         }
       }
       $mysqli->close();
@@ -81,7 +81,6 @@
         $resultResumen = $mysqli->query($sql);
         if ($result = $mysqli->query($sql)) {
           while ($row = $result->fetch_row()) {
-            //echo ('<div id="resumenDilema"><p>' . $row[0] . '<p></div>');   
             echo ($row[0] . "\n");
           }
         }
@@ -95,10 +94,6 @@
       var numero = 0
 
       for (var i = 0; i < divs.length; i++) {
-      //  var a = i;
-      //  divs[i].addEventListener("mouseenter", function() {
-      //    mouseOver(a);
-      //  });
           divs[i].addEventListener("mouseleave", function() {
             mouseOut();
           });

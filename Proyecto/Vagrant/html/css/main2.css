@@ -166,19 +166,6 @@ html, body {
     text-decoration: none;
   }
   
-  #dilema1 {
-    padding-bottom:50px; /* este valor debe ser igual o mayor al alto del pie */
-    text-align: left;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
-    font-size: 10px;
-    margin-left: 5%;
-    margin-right: 10%;
-    margin-top: 2%;
-    width: auto;
-    height: 12%;
-    border: 1px solid black;
-  }
-
   #dilemaSeleccionado {
     padding-bottom: 50px; /* este valor debe ser igual o mayor al alto del pie */
     font-family: "Comic Sans MS", "Comic Sans", cursive;
@@ -187,7 +174,18 @@ html, body {
     margin-top: -25%;
     width: 40%;
     height: 40%;
+    background-color: white;
     border: 1px solid black;
+  }
+
+  #dilemaSeleccionado p{
+    text-align: center;
+    margin-top: 15%;
+    margin-bottom: 10%;
+  }
+
+  #resumenes{
+    display: none;
   }
 
   #crearDilema{

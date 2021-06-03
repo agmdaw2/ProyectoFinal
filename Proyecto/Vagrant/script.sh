@@ -102,7 +102,7 @@ INSERT INTO pregunta (texto_pregunta, id_dilema, tipo_numeracion) VALUES ('Refle
 INSERT INTO pregunta (texto_pregunta, id_dilema, tipo_numeracion) VALUES ('Coneixies la relació entre les radiacions electromagnètiques i la salut? Quina és la teva opinió?','2','ul');
 INSERT INTO pregunta (texto_pregunta, id_dilema, tipo_numeracion) VALUES ('Què és un agent carcinògen? implica l\'aparició segura d\'un càncer?','2','ul');
 INSERT INTO pregunta (texto_pregunta, id_dilema, tipo_numeracion) VALUES ('Desconnectes el wifi del teu telèfon mòbil quan vas a dormir? Per què?','2','ul');
-INSERT INTO pregunta (texto_pregunta, id_dilema, tipo_numeracion) VALUES ('Investiga dos objectes tecnol`gics que es puguin considerar pseudotecnologia','2','p');
+INSERT INTO pregunta (texto_pregunta, id_dilema, tipo_numeracion) VALUES ('Investiga dos objectes tecnològics que es puguin considerar pseudotecnologia','2','p');
 INSERT INTO pregunta (texto_pregunta, id_dilema, tipo_numeracion) VALUES ('Posada en comú a l\'aula. Conclusions sobre l\'existència de la pseudotecnologia','2','p');
 
 INSERT INTO pregunta (texto_pregunta, id_dilema, tipo_numeracion) VALUES ('Reflexiona sobre les següents preguntes i raona la teva resposta','3','p');

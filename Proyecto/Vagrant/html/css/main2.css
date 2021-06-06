@@ -278,6 +278,54 @@ html, body {
   /* border: 1px solid black; */
 }
 
+.filtroInstituto{
+  color: rgb(54, 53, 53);
+  margin-top: 4%;
+  margin-bottom: 10%;
+  margin-left: 5%;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 18px;
+}
+
+.filtroI{
+  color: rgb(54, 53, 53);
+  margin-left: 5%;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 15px;
+}
+
+.filtroE{
+  color: rgb(54, 53, 53);
+  margin-left: 20%;
+  margin-top: -6%;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 15px;
+}
+
+.filtroG{
+  color: rgb(54, 53, 53);
+  margin-left: 45%;
+  margin-top: -3.2%;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 15px;
+}
+
+.filtroD{
+  color: rgb(54, 53, 53);
+  margin-left: 5%;
+  margin-top: 5%;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 15px;
+}
+
+.filtroP{
+  color: rgb(54, 53, 53);
+  margin-left: 45%;
+  margin-top: -16%;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 15px;
+}
+
   .Footer{
     position: fixed;
     bottom: 0;

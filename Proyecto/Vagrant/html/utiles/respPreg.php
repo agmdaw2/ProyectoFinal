@@ -5,7 +5,7 @@
     function  respPreg($id, $estoyLogeado){
         $servername = "localhost";
         $username = "root";
-        $password = "admin";
+        $password = "password";
     
         try {
         $conn = new PDO("mysql:host=$servername;dbname=tecnoticos", $username, $password);
@@ -33,11 +33,11 @@
 
         while ($row = $result->fetch()) {
             if($contador++ == 1){
-                echo "<div id='titulo'>".$row['titulo_dilema']."</div>";
-                echo "<div id='descripcion'>".$row['descripcion_dilema']."</div>";
-                echo "<div id='recursos'>".$row['recurso_dilema']."</div>";
+                echo "<div id='parrafoPD'>".$row['titulo_dilema']."</div>";
+                echo "<div id='parrafoPD'>".$row['descripcion_dilema']."</div>";
+                echo "<div id='parrafoPD'>".$row['recurso_dilema']."</div>";
                 if($estoyLogeado == true){
-                    echo "<div id='actividad>";
+                    echo "<div id='parrafoPD'>";
                     echo "<div id='titulo_actividad'><h3>REFLEXIONEM?</h3></div>";
                 }
             }
@@ -47,7 +47,7 @@
                 if($row['tipo_numeracion'] == 'p'){
                     echo "<div>Activitat.".$contadorActividades++."</div>";
                 }
-                echo "<div id='actividad_dilema'>".$row['texto_pregunta']."</div>";
+                echo "<div id='parrafoPD'>".$row['texto_pregunta']."</div>";
                 if($row['tipo_numeracion'] == 'ul' || $row['tipo_numeracion'] == 'ol'){
                     echo "<input name='texto_respuesta[".$row['id_pregunta']."][respuesta]' type='text' placeholder='Contesta aquí'>";
                     echo "<input name='texto_respuesta[".$row['id_pregunta']."][respuesta_id]' type='hidden' value='".$row['id_pregunta']."'>";
@@ -57,7 +57,11 @@
 
         echo "</div>";
         if($estoyLogeado == true){
-            echo "<input type='submit' value='Guarda y Envia' id='enviar'>";
+            echo "<!--<input type='submit' value='Guarda y Envia' id='enviar'>-->
+            <div class='button-container-2'>
+          <span class='mas'>y envia</span>
+          <button id='work' type='submit' name='Hover'>Guarda</button>
+        </div>";
             echo "</form>";
         }
  

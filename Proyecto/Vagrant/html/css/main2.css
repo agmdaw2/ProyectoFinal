@@ -290,6 +290,18 @@ html, body {
     flex-direction: row;
 }
 
+.FooterLA{
+  /* position: fixed; */
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  color: white;
+  width: 100vw;
+  align-content: center;
+  display: inline-flex;
+  flex-direction: row;
+}
+
   .ContenidoFooter{
     margin-top: 20px;
     margin-bottom: 20px;

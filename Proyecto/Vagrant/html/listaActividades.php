@@ -119,7 +119,7 @@
       }
     </script>
 
-    <div class="Footer" style="margin-top: 10%;">
+    <div class="FooterLA" style="margin-top: 10%;">
       <div id="footerContacto" class="ContenidoFooter">Correo: eramire1@xtec.cat</div>
       <div id="footerCopy" class="ContenidoFooter">2021-2022 &copy; Tecnoetica</div>
       <div id="footerRedes" class="ContenidoFooter">Twitter</div>

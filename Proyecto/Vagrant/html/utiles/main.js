@@ -13,14 +13,14 @@ function tipoSelectorEdad(){
         label.innerHTML='Elige el rango de edad';
         inputDos = document.createElement('input');
         inputDos.setAttribute('type', 'number');
-        inputDos.setAttribute('name', 'filtro[R][edadmax]');
+        inputDos.setAttribute('name', 'filtro[edadmax]');
         inputDos.setAttribute('min', '10');
         inputDos.setAttribute('max', '100');
         inputDos.setAttribute('placeholder', 'maximo');
 
         input = document.createElement('input');
         input.setAttribute('type', 'number');
-        input.setAttribute('name', 'filtro[R][edadmin]');
+        input.setAttribute('name', 'filtro[edadmin]');
         input.setAttribute('min', '10');
         input.setAttribute('max', '100');
         input.setAttribute('placeholder', 'minimo');
@@ -30,7 +30,7 @@ function tipoSelectorEdad(){
         label.innerHTML='Elige la edad';
         input = document.createElement('input');
         input.setAttribute('type', 'number');
-        input.setAttribute('name', 'filtro[S][edad]');
+        input.setAttribute('name', 'filtro[edad]');
         input.setAttribute('min', '10');
         input.setAttribute('max', '100');
         input.setAttribute('placeholder', 'edad');
@@ -67,21 +67,14 @@ function preguntas(idDilema){
     }
 }
 
-function exportTableToExcel(tableID, nombreArchivo){
+function exportTableToExcel(tableID, filename = ''){
     var downloadLink;
     var dataType = 'application/vnd.ms-excel';
     var tableSelect = document.getElementById(tableID);
     var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
     
-    // Especificar fecha
-    n =  new Date();
-        //Año
-    y = n.getFullYear();
-        //Mes
-    m = n.getMonth() + 1;
-        //Día
-    d = n.getDate();
-    nombreArchivo = nombreArchivo+"."+d+"/"+m+"/"+y;
+    // Specify file name
+    filename = filename?filename+'.xls':'excel_data.xls';
     
     // Create download link element
     downloadLink = document.createElement("a");
@@ -92,16 +85,17 @@ function exportTableToExcel(tableID, nombreArchivo){
         var blob = new Blob(['ufeff', tableHTML], {
             type: dataType
         });
-        navigator.msSaveOrOpenBlob( blob, nombreArchivo);
+        navigator.msSaveOrOpenBlob( blob, filename);
     }else{
         // Create a link to the file
         downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
     
         // Setting the file name
-        downloadLink.download = nombreArchivo;
+        downloadLink.download = filename;
         
         //triggering the function
         downloadLink.click();
     }
 }
+
 

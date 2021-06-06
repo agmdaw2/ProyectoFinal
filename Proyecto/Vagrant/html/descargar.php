@@ -47,45 +47,24 @@ require 'utiles/filtros.php';
                         class="fa fa-caret-down"></i></button>
             </div>
         </div>
-
-        <!-- <table id="tblData">
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Country</th>
-            </tr>
-            <tr>
-                <td>John Doe</td>
-                <td>john@gmail.com</td>
-                <td>USA</td>
-            </tr>
-            <tr>
-                <td>Michael Addison</td>
-                <td>michael@gmail.com</td>
-                <td>UK</td>
-            </tr>
-            <tr>
-                <td>Sam Farmer</td>
-                <td>sam@gmail.com</td>
-                <td>France</td>
-            </tr>
-        </table> -->
-
         <div id="contenidoFiltros">
             <?php
                 filtrar();
                 imprimirScript();
             ?>
         </div>   
-        <div class='button-container-2' style="display:none">
-        <span class='mas'>Descargar</span>
-        <button id='work' type=button' name='Hover' onclick="exportTableToExcel('tablaContenido', 'consulta')">Descargar</button>
+        <div class='button-container-2' style="display:block">
+        <span class='mas'>Excel</span>
+        <button id='work' type='button' name='Hover' onclick="exportTableToExcel('tablaContenido')">Descargar</button> -->
         </div>
-        <div class="Footer">
-            <div id="footerContacto" class="ContenidoFooter">Correo: eramire1@xtec.cat</div>
+
+        <!-- <div class="Footer">
+            <div id="footerContacto" class="ContenidoFooter">Correo:</div>
             <div id="footerCopy" class="ContenidoFooter">2021-2022 &copy; Tecnoetica</div>
             <div id="footerRedes" class="ContenidoFooter">Twitter</div>
-        </div>
+        </div> -->
+        
     </div>
+    <script src='utiles/main.js'></script>
 </body>
 </html>

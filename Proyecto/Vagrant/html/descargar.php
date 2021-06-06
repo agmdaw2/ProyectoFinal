@@ -82,7 +82,7 @@ require 'utiles/filtros.php';
         <button id='work' type=button' name='Hover' onclick="exportTableToExcel('tablaContenido', 'consulta')">Descargar</button>
         </div>
         <div class="Footer">
-            <div id="footerContacto" class="ContenidoFooter">Correo:</div>
+            <div id="footerContacto" class="ContenidoFooter">Correo: eramire1@xtec.cat</div>
             <div id="footerCopy" class="ContenidoFooter">2021-2022 &copy; Tecnoetica</div>
             <div id="footerRedes" class="ContenidoFooter">Twitter</div>
         </div>

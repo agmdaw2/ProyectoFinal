@@ -35,7 +35,7 @@
             if($contador++ == 1){
                 echo "<div id='parrafoPD'>".$row['titulo_dilema']."</div>";
                 echo "<div id='parrafoPD'>".$row['descripcion_dilema']."</div>";
-                echo "<div id='parrafoPD'>".$row['recurso_dilema']."</div>";
+                echo "<div id='parrafoLink'>".$row['recurso_dilema']."</div>";
                 if($estoyLogeado == true){
                     echo "<div id='parrafoPD'>";
                     echo "<div id='titulo_actividad'><h3>REFLEXIONEM?</h3></div>";
@@ -47,7 +47,7 @@
                 if($row['tipo_numeracion'] == 'p'){
                     echo "<div>Activitat.".$contadorActividades++."</div>";
                 }
-                echo "<div id='parrafoPD'>".$row['texto_pregunta']."</div>";
+                echo "<div id='parrafoLink'>".$row['texto_pregunta']."</div>";
                 if($row['tipo_numeracion'] == 'ul' || $row['tipo_numeracion'] == 'ol'){
                     echo "<input name='texto_respuesta[".$row['id_pregunta']."][respuesta]' type='text' placeholder='Contesta aquí'>";
                     echo "<input name='texto_respuesta[".$row['id_pregunta']."][respuesta_id]' type='hidden' value='".$row['id_pregunta']."'>";

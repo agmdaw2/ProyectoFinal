@@ -59,7 +59,7 @@
       if ($result = $mysqli->query($sql)) {
         $count = 1;
         while ($row = $result->fetch_row()) {
-          echo ('<div id="dilema' . $count . '" class="titulo" onMouseEnter="mouseOver('. $count .')"><a class="links" href="respPreguntas.php?dilema='. $row[0] .'">' . $row[1] . '</a></div>');
+          echo ('<div id="dilema' . $count . '" class="titulo" onMouseEnter="mouseOver('. $count++ .')"><a class="links" href="respPreguntas.php?dilema='. $row[0] .'">' . $row[1] . '</a></div>');
         }
       }
       $mysqli->close();

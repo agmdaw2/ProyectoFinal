@@ -78,143 +78,161 @@
         </form> -->
         <br>
         <hr>
-        <div class="Flip-cards">
-
         <?php
-        $mysqli = new mysqli("localhost", "root", "password", "tecnoticos");
-        if ($mysqli->connect_errno) {
-          echo "Failed to connect to MySQL: " . $mysqli->connect_error;
-          exit();
-        }
+                $mysqli = new mysqli("localhost", "root", "password", "tecnoticos");
+                if ($mysqli->connect_errno) {
+                    echo "Failed to connect to MySQL: " . $mysqli->connect_error;
+                    exit();
+                }
+                $id_dilema_max;
+                $id_max = "SELECT MAX(id_dilema) AS id_dilema FROM dilema";
+                if($resultado = $mysqli->query($id_max)){
+                    while($row = $resultado->fetch_row()){
+                        $id_dilema_max = $row[0];
+                    }
+                }
+                echo "<a href='respPreguntas.php?dilema=".$id_dilema_max."'>";
+
         ?>
+            <div class="Flip-cards">
 
-            <div class="front-face">
-                <div class="contents front">
-                    <p><?php
-                        $id_dilema_max;
-                        $id_max = "SELECT MAX(id_dilema) AS id_dilema FROM dilema";
-                        if($resultado = $mysqli->query($id_max)){
-                            while($row = $resultado->fetch_row()){
-                                $id_dilema_max = $row[0];
+            <?php
+                $mysqli = new mysqli("localhost", "root", "password", "tecnoticos");
+                if ($mysqli->connect_errno) {
+                echo "Failed to connect to MySQL: " . $mysqli->connect_error;
+                exit();
+                }
+            ?>
+                <div class="front-face">
+                    <div class="contents front">
+                        <p><?php
+                            
+                            $sql2 = "SELECT titulo_dilema FROM dilema WHERE id_dilema = $id_dilema_max";
+                            
+                            if($resultado = $mysqli->query($sql2)){
+                                while($row = $resultado->fetch_row()){
+                                    $aBorrar = array('<h2>','</h2>','<strong>','</strong>','<p>','</p>');
+                                    $textoDilema = str_replace($aBorrar,"", $row[0]);
+                                    
+                                }
                             }
-                        }
-                        
-                        $sql2 = "SELECT titulo_dilema FROM dilema WHERE id_dilema = $id_dilema_max";
-                        
-                        if($resultado = $mysqli->query($sql2)){
-                            while($row = $resultado->fetch_row()){
-                                $aBorrar = array('<h2>','</h2>','<strong>','</strong>','<p>','</p>');
-                                $textoDilema = str_replace($aBorrar,"", $row[0]);
-                                
+                            echo $textoDilema;
+                        ?></p>
+                    </div>
+                </div>
+            
+                <div class="back-face" >
+                    <div class="contents back">
+                        <h2><?php
+                            
+                            $id_max = "SELECT MAX(id_dilema) AS id_dilema FROM dilema";
+                            if($resultado = $mysqli->query($id_max)){
+                                while($row = $resultado->fetch_row()){
+                                    $id_dilema_max = $row[0];
+                                }
                             }
-                        }
-                        echo $textoDilema;
-                    ?></p>
+                            
+                            $sql2 = "SELECT titulo_dilema FROM dilema WHERE id_dilema = $id_dilema_max";
+                            
+                            if($resultado = $mysqli->query($sql2)){
+                                while($row = $resultado->fetch_row()){
+                                    $aBorrar = array('<h2>','</h2>','<strong>','</strong>','<p>','</p>');
+                                    $textoDilema = str_replace($aBorrar,"", $row[0]);
+                                    
+                                }
+                            }
+                            echo $textoDilema;
+                        ?></h2>
+                        <span></span>
+                    </div>
                 </div>
             </div>
-            <div class="back-face">
-                <div class="contents back">
-                    <h2><?php
-                        
-                        $id_max = "SELECT MAX(id_dilema) AS id_dilema FROM dilema";
-                        if($resultado = $mysqli->query($id_max)){
-                            while($row = $resultado->fetch_row()){
-                                $id_dilema_max = $row[0];
+        </a>
+        <?php
+            $id_dilema_max = $id_dilema_max -1;
+            echo "<a href='respPreguntas.php?dilema=".$id_dilema_max."'>";
+        ?>
+            <div class="Flip-cards2" >
+                <div class="front-face">
+                    <div class="contents front">
+                        <p><?php 
+                            $sql2 = "SELECT titulo_dilema FROM dilema WHERE id_dilema = $id_dilema_max";
+                            
+                            if($resultado = $mysqli->query($sql2)){
+                                while($row = $resultado->fetch_row()){
+                                    $aBorrar = array('<h2>','</h2>','<strong>','</strong>','<p>','</p>');
+                                    $textoDilema = str_replace($aBorrar,"", $row[0]);
+                                    
+                                }
                             }
-                        }
-                        
-                        $sql2 = "SELECT titulo_dilema FROM dilema WHERE id_dilema = $id_dilema_max";
-                        
-                        if($resultado = $mysqli->query($sql2)){
-                            while($row = $resultado->fetch_row()){
-                                $aBorrar = array('<h2>','</h2>','<strong>','</strong>','<p>','</p>');
-                                $textoDilema = str_replace($aBorrar,"", $row[0]);
-                                
+                            echo $textoDilema;
+                        ?></p>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="back-face">
+                    <div class="contents back">
+                        <h2><?php 
+                            
+                            $sql2 = "SELECT titulo_dilema FROM dilema WHERE id_dilema = $id_dilema_max";
+                            
+                            if($resultado = $mysqli->query($sql2)){
+                                while($row = $resultado->fetch_row()){
+                                    $aBorrar = array('<h2>','</h2>','<strong>','</strong>','<p>','</p>');
+                                    $textoDilema = str_replace($aBorrar,"", $row[0]);
+                                    
+                                }
                             }
-                        }
-                        echo $textoDilema;
-                    ?></h2>
-                    <span></span>
+                            echo $textoDilema;
+                        ?></h2>
+                        <span></span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="Flip-cards2">
-            <div class="front-face">
-                <div class="contents front">
-                    <p><?php 
-                        $id_dilema_max = $id_dilema_max - 1;
-                        $sql2 = "SELECT titulo_dilema FROM dilema WHERE id_dilema = $id_dilema_max";
-                        
-                        if($resultado = $mysqli->query($sql2)){
-                            while($row = $resultado->fetch_row()){
-                                $aBorrar = array('<h2>','</h2>','<strong>','</strong>','<p>','</p>');
-                                $textoDilema = str_replace($aBorrar,"", $row[0]);
-                                
+        </a>
+        <?php
+            $id_dilema_max = $id_dilema_max -1;
+            echo "<a href='respPreguntas.php?dilema=".$id_dilema_max."'>";
+        ?>
+            <div class="Flip-cards3">
+                <div class="front-face">
+                    <div class="contents front">
+                        <p><?php 
+                            
+                            $sql2 = "SELECT titulo_dilema FROM dilema WHERE id_dilema = $id_dilema_max";
+                            
+                            if($resultado = $mysqli->query($sql2)){
+                                while($row = $resultado->fetch_row()){
+                                    $aBorrar = array('<h2>','</h2>','<strong>','</strong>','<p>','</p>');
+                                    $textoDilema = str_replace($aBorrar,"", $row[0]);
+                                    
+                                }
                             }
-                        }
-                        echo $textoDilema;
-                    ?></p>
-                    <span></span>
+                            echo $textoDilema;
+                        ?></p>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="back-face">
+                    <div class="contents back">
+                        <h2><?php 
+                            
+                            $sql2 = "SELECT titulo_dilema FROM dilema WHERE id_dilema = $id_dilema_max";
+                            
+                            if($resultado = $mysqli->query($sql2)){
+                                while($row = $resultado->fetch_row()){
+                                    $aBorrar = array('<h2>','</h2>','<strong>','</strong>','<p>','</p>');
+                                    $textoDilema = str_replace($aBorrar,"", $row[0]);
+                                    
+                                }
+                            }
+                            echo $textoDilema;
+                        ?></h2>
+                        <span></span>
+                    </div>
                 </div>
             </div>
-            <div class="back-face">
-                <div class="contents back">
-                    <h2><?php 
-                        
-                        $sql2 = "SELECT titulo_dilema FROM dilema WHERE id_dilema = $id_dilema_max";
-                        
-                        if($resultado = $mysqli->query($sql2)){
-                            while($row = $resultado->fetch_row()){
-                                $aBorrar = array('<h2>','</h2>','<strong>','</strong>','<p>','</p>');
-                                $textoDilema = str_replace($aBorrar,"", $row[0]);
-                                
-                            }
-                        }
-                        echo $textoDilema;
-                    ?></h2>
-                    <span></span>
-                </div>
-            </div>
-        </div>
-        <div class="Flip-cards3">
-            <div class="front-face">
-                <div class="contents front">
-                    <p><?php 
-                        $id_dilema_max = $id_dilema_max -1;
-                        $sql2 = "SELECT titulo_dilema FROM dilema WHERE id_dilema = $id_dilema_max";
-                        
-                        if($resultado = $mysqli->query($sql2)){
-                            while($row = $resultado->fetch_row()){
-                                $aBorrar = array('<h2>','</h2>','<strong>','</strong>','<p>','</p>');
-                                $textoDilema = str_replace($aBorrar,"", $row[0]);
-                                
-                            }
-                        }
-                        echo $textoDilema;
-                    ?></p>
-                    <span></span>
-                </div>
-            </div>
-            <div class="back-face">
-                <div class="contents back">
-                    <h2><?php 
-                        
-                        $sql2 = "SELECT titulo_dilema FROM dilema WHERE id_dilema = $id_dilema_max";
-                        
-                        if($resultado = $mysqli->query($sql2)){
-                            while($row = $resultado->fetch_row()){
-                                $aBorrar = array('<h2>','</h2>','<strong>','</strong>','<p>','</p>');
-                                $textoDilema = str_replace($aBorrar,"", $row[0]);
-                                
-                            }
-                        }
-                        echo $textoDilema;
-                    ?></h2>
-                    <span></span>
-                </div>
-            </div>
-        </div>
-
+        </a>
         <br>
         
         <div class="Footer" style="margin-top: 25%">

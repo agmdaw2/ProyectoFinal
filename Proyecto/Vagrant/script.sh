@@ -148,6 +148,22 @@ INSERT INTO pregunta (texto_pregunta, id_dilema, tipo_numeracion) VALUES ('Hi ha
 INSERT INTO pregunta (texto_pregunta, id_dilema, tipo_numeracion) VALUES ('Existeixen diverses aplicacions que controlen el temps d\'ús que passem amb els telèfons mòbils per obtenir una millora del benestar. Descarrega\'t una de les aplicacions proposades i registra els teus resultats durant una setmana, valora\'ls i realitza un document explicatiu d\aquests donant la teva opinió personal. *En cas de no tenir telèfon propi, proposa l\'experiment a un familiar.','8','p');
 INSERT INTO pregunta (texto_pregunta, id_dilema, tipo_numeracion) VALUES ('Posada en comú a l\'aula. Conclusions sobre els perjudicis que pot causar l\'ús de pantalles durant períodes de llarga durada.','8','p');
 
+INSERT INTO respuesta (texto_respuesta, id_usuario, id_pregunta, id_dilema) VALUES ('Que no tenga que conducirlo yo y asi poder dormir durante el trayecto', '2','2','1');
+INSERT INTO respuesta (texto_respuesta, id_usuario, id_pregunta, id_dilema) VALUES ('En caso de accidente que prima? la persona o la mercancia?', '2','3','1');
+INSERT INTO respuesta (texto_respuesta, id_usuario, id_pregunta, id_dilema) VALUES ('Creo que lo importante es que no ocurra, pero en el caso de, la persona del interior del vehiculo deberia tener seguridad suficiente como para aguantar la colision, sin embargo un viandante no', '2','4','1');
+
+INSERT INTO respuesta (texto_respuesta, id_usuario, id_pregunta, id_dilema) VALUES ('No se nada al respecto pero pensaba que no eran malignas', '2','9','2');
+INSERT INTO respuesta (texto_respuesta, id_usuario, id_pregunta, id_dilema) VALUES ('Es un elemento que te puede llegar a provocar cancer', '2','10','2');
+INSERT INTO respuesta (texto_respuesta, id_usuario, id_pregunta, id_dilema) VALUES ('No, porque no creo que sea maligno', '2','11','2');
+
+INSERT INTO respuesta (texto_respuesta, id_usuario, id_pregunta, id_dilema) VALUES ('En contra', '2','15','3');
+INSERT INTO respuesta (texto_respuesta, id_usuario, id_pregunta, id_dilema) VALUES ('Si, ya que mucha de la tecnologia, obsoleta, militar sale al mercado para el civil, como internet, el gps, etc', '2','16','3');
+INSERT INTO respuesta (texto_respuesta, id_usuario, id_pregunta, id_dilema) VALUES ('Porque muchos paises necesitan de la venta de armamento militar para poder subsistir', '2','18','3');
+INSERT INTO respuesta (texto_respuesta, id_usuario, id_pregunta, id_dilema) VALUES ('A que Tony creia que solamente le vendia armamento a su pais, pero sin embargo se da cuenta que su armamento llega incluso a los enemigos de su pais', '2','19','3');
+
+INSERT INTO respuesta (texto_respuesta, id_usuario, id_pregunta, id_dilema) VALUES ('Es un problema grave pero en la actualidad no se le quiere dar una solucion viable', '2','22','4');
+INSERT INTO respuesta (texto_respuesta, id_usuario, id_pregunta, id_dilema) VALUES ('No, dara informacion sesgada ya que le interesa crear una idea, incorrecta, de lo que es', '2','23','4');
+INSERT INTO respuesta (texto_respuesta, id_usuario, id_pregunta, id_dilema) VALUES ('No tengo la respuesta a esa solucion ya que creo que la unica solucion seria no tener esos residuos', '2','25','4');
 "
 
 #Users

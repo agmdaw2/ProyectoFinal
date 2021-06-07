@@ -24,7 +24,7 @@
 
         echo "<div id='dilemaAll'>";
         //HAY QUE borrar la linea siguiente
-        $estoyLogeado = true;
+        //$estoyLogeado = true;
         if($estoyLogeado == true){
             echo "<form method='POST' action>";
         }
@@ -69,8 +69,8 @@
 
         if(isset($_POST['texto_respuesta']) && !empty($_POST['texto_respuesta'])){
 
-            //$idUsuario = $_SESSION['idUsuario'];
-            $idUsuario = 1;
+            $idUsuario = $_SESSION['idUsuario'];
+            //$idUsuario = 1;
 
             foreach ($_POST['texto_respuesta'] as $key => $values){
                 $txt_Respuesta = $values['respuesta'];

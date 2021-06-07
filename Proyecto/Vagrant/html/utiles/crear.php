@@ -43,15 +43,15 @@
                         
                         //Separar las preguntas para hacer posteriormente su INSERT individual
 
-                        $tipoNumeracion='<p>';
+                        $tipoNumeracion='p';
 
                         // Averiguaremos de que tipo de Enumeracion sera
                         if(strlen(strstr($actividades,'<ul>'))>0){
-                            $tipoNumeracion= '<ul>';
+                            $tipoNumeracion= 'ul';
                         }
 
                         if(strlen(strstr($actividades,'<ol>'))>0){
-                            $tipoNumeracion= '<ol>';
+                            $tipoNumeracion= 'ol';
                         }
 
                         //Extraemos cada una de las preguntas escritas y hacemos los INSERTS en la tabla PREGUNTA
@@ -60,7 +60,7 @@
 
                         if($li = $dom->getElementsByTagName('li')){
                             foreach($li as $list){
-                                echo $list->nodeValue, PHP_EOL;
+                                //echo $list->nodeValue, PHP_EOL;
                                 $sql = "INSERT INTO pregunta (texto_pregunta, tipo_numeracion, id_dilema)  
                                 VALUES ('$list->nodeValue', '$tipoNumeracion', '$ultimoID')";
                                 
@@ -73,7 +73,7 @@
 
                         if($p = $dom ->getElementsByTagName('p')){
                             foreach($p as $list){
-                                echo $list->nodeValue, PHP_EOL;
+                                //echo $list->nodeValue, PHP_EOL;
                                 $sql = "INSERT INTO pregunta (texto_pregunta, tipo_numeracion, id_dilema)  
                                 VALUES ('$list->nodeValue', '$tipoNumeracion', '$ultimoID')";
                                 if ($conn->query($sql) === TRUE) {

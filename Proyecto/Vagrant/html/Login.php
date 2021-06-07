@@ -33,7 +33,7 @@
         <input type="password" name="t2" placeholder="Contraseña" required><br><br>
         <button type="submit" id="Login" name="" value="Ingresar">Entrar</button>
         <input type="button" id=Registro onclick="window.location.href='Registro.php';" value="Registrarse" />
-        <p>¿Quieres volver al Inicio? <a href="index.html">Haz click aquí</a>.</p>
+        <p>¿Quieres volver al Inicio? <a href="index.php">Haz click aquí</a>.</p>
         
     </form>
     
@@ -49,12 +49,14 @@
 
             $query ->bindParam(":u", $u);
             $query ->bindParam(":p", $p);
+            $query ->bindParam($rol);
 
             $query ->execute();
             $usuario = $query->fetch(PDO::FETCH_ASSOC);
             if($usuario){
                 $_SESSION['usuario'] = $usuario['correo'];
                 $_SESSION['user_id'] = $usuario['id_usuario'];
+                $_SESSION['role'] = $usuario['rol'];
                 
                 if($usuario['rol'] == "admin"){
                     header("location:inicioAdmin.php");

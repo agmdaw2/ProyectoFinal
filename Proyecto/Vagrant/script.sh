@@ -38,7 +38,7 @@ PRIMARY KEY (id_dilema)
 
 CREATE TABLE pregunta (
   id_pregunta int AUTO_INCREMENT,
-  texto_pregunta text NOT NULL,
+  texto_pregunta text CHARACTER SET utf8 NOT NULL,
 id_dilema int NOT NULL,
 tipo_numeracion VARCHAR(10),
 PRIMARY KEY (id_pregunta),
@@ -66,7 +66,7 @@ FOREIGN KEY (id_instituto) REFERENCES instituto(id_instituto)
 
 CREATE TABLE respuesta (
  id_respuesta int AUTO_INCREMENT,
-texto_respuesta text NOT NULL,
+texto_respuesta text CHARACTER SET utf8 NOT NULL,
    id_usuario int NOT NULL,
   id_pregunta int NOT NULL,
 id_dilema INT NOT NULL,

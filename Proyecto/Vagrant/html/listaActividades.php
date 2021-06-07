@@ -17,8 +17,13 @@
       <a href="Login.html"><img src="img/logotipo.png" alt="logo" width="300px" height="90px"></a>
     </div>
     <div class="Login-Registro">
-      <img src="img/Perfil.png" alt="Perfil" width="50px" height="50px">
-    </div>
+            <a href="Login.php"><img src="img/Perfil.png" alt="Perfil" width="50px" height="50px"></a>
+            <?php
+                if(isset($_SESSION["usuario"])){
+                    echo'<a href="logout.php"><img src="img/logout.png" alt="Logout" width="50px" height="50px"></a>';
+                }
+            ?>
+        </div>
     <div class="navbar">
       <div class="subnav">
         <button class="subnavbtn" onclick="window.location.href='index.php'">Inicio <i class="fa fa-caret-down"></i></button>

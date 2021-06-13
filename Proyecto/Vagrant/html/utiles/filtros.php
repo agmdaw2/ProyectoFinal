@@ -12,10 +12,10 @@
         } catch(PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
         }
-        echo "<div>";
+        echo "<div class='divDes'>";
         echo "<form method='POST'>";
 
-        echo "<div id='filtroInstituto'>";
+        echo "<div id='filtroInstituto' class='filtroI'>";
         echo "<label>Elige el/los Institutos: </label><br>";
         $result = $conn->prepare("SELECT instituto.nombre_instituto, instituto.id_instituto FROM instituto");
         $result->setFetchMode(PDO::FETCH_ASSOC);
@@ -29,7 +29,7 @@
         echo "<br>";
 
         //filtro EDAD
-        echo "<div id='filtroEdad'>";
+        echo "<div id='filtroEdad' class='filtroE'>";
         echo "<label>Elige el formato de edad:</label>";        
         echo "<select onchange='tipoSelectorEdad()' id='selectTipoEdad'>";
         echo "<option selected='selected' disabled='disabled'>Tipo</option>";
@@ -40,7 +40,7 @@
         echo "<br>";
 
         //filtro SEXO
-        echo "<div id='filtroSexo'>";
+        echo "<div id='filtroSexo' class='filtroG'>";
         echo "<label>Elige el genero:</label>";        
         echo "<select name='filtro[sexo]' id='selectSexo' required>";
         echo "<option selected='selected' disabled='disabled'>Tipo</option>";
@@ -52,7 +52,7 @@
         echo "<br>";
 
         //filtro DILEMA
-        echo "<div id='filtroDilema'>";
+        echo "<div id='filtroDilema' class='filtroD'>";
         echo "<label>Elige el/los Dilemas: </label><br>";
         $result = $conn->prepare("SELECT dilema.titulo_dilema, dilema.id_dilema FROM dilema");
         $result->setFetchMode(PDO::FETCH_ASSOC);
@@ -69,7 +69,7 @@
         echo "<br>";
 
         //filtro PREGUNTA
-        echo "<div id='filtroPregunta'>";
+        echo "<div id='filtroPregunta' class='filtroP'>";
         echo "<label>Elige el/las Preguntas: </label><br>";
         $result = $conn->prepare("SELECT pregunta.texto_pregunta, pregunta.id_pregunta, pregunta.id_dilema FROM pregunta WHERE tipo_numeracion ='ul' OR tipo_numeracion ='ol'");
         $result->setFetchMode(PDO::FETCH_ASSOC);
@@ -81,7 +81,15 @@
         echo "</div>";
 
         echo "<br>";
-
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
         echo "<input type='submit' value='Guarda los filtros' id='enviar' name='submit'>";
 
         echo "</form>";

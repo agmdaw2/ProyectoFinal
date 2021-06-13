@@ -1,9 +1,8 @@
 <?php
     session_start();
-    if($_SESSION['role'] == 'usuario' || $_SESSION['role'] !== 'admin') {
-      //block user access
-      die("No tienes permisos para acceder a esta pagina.");
- }
+    if(isset($_SESSION["usuario"])){
+    }
+    require 'utiles/listDilema.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,15 +15,12 @@
 
 <body>
   <div id="pagina">
-  <div id="cabecera">
-    <a href="index.php"><img src="img/logotipo.png" alt="logo" width="300px" height="90px"></a>
-  </div>
+    <div id="cabecera">
+        <a href="index.php"><img src="img/logotipo.png" alt="logo" width="300px" height="90px"></a>
+    </div>
     <div class="Login-Registro">
       <a href="Login.php"><img src="img/Perfil.png" alt="Perfil" width="50px" height="50px"></a>
         <?php
-          if($_SESSION['role'] == "admin"){
-            echo'<a href="inicioAdmin.php"><img src="img/menu_adm.png" alt="menuAdm" width="80px" height="50px"></a>';
-          }
           if(isset($_SESSION["usuario"])){
             echo'<a href="logout.php"><img src="img/logout.png" alt="Logout" width="50px" height="50px"></a>';
           }
@@ -52,29 +48,20 @@
             class="fa fa-caret-down"></i></button>
       </div>
     </div>
-    <hr>
-    <!-- <div class="search-container">
-            <form action="/action_page.php">
-              <input type="text" placeholder="Search.." name="search">
-              <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-        </div> -->
-        <div id="contenido2">
-          <div class="button-container-2" style="margin-left: 13%;">
-            <span class="mas">Crear dilema</span>
-            <button onclick="window.location.href='/crearDilema.php'" id="work" type="button" name="Hover">Crear dilema</button>
-          </div> 
-
-          <div class="button-container-2" style="margin-top: -6.8%;margin-left: 55%;">
-            <span class="mas">Consulta</span>
-            <button onclick="window.location.href='/descargar.php'" id="work" type="button" name="Hover">Consulta</button>
-          </div> 
-          <div class="button-container-2" style="margin-top: -6.8%;margin-left: 55%;">
-            <span class="mas">Listar Dilemas</span>
-            <button onclick="window.location.href='/listarDilemas.php'" id="work" type="button" name="Hover">Consulta</button>
-          </div> 
-        </div>
+    <div id="allDilemas">
+        <table>
+            <tr>
+                <th>Titulo Dilema</th>
+                <th>Modificar</th>
+                <th>Eliminar</th>
+            </tr>
+            <?php
+                crearListadoDilemas();
+            ?>
+        </table>
     </div>
+
+
 
     <div class="Footer">
       <div id="footerContacto" class="ContenidoFooter">Correo: eramire1@xtec.cat</div>

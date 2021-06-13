@@ -1,6 +1,7 @@
 <?php
     session_start();
-    require 'utiles/listDilema.php';
+    if(isset($_SESSION["usuario"])){
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,7 +15,7 @@
 <body>
   <div id="pagina">
     <div id="cabecera">
-        <a href="index.php"><img src="img/logotipo.png" alt="logo" width="300px" height="90px"></a>
+      <a href="index.php"><img src="img/logotipo.png" alt="logo" width="300px" height="90px"></a>
     </div>
     <div class="Login-Registro">
       <a href="Login.php"><img src="img/Perfil.png" alt="Perfil" width="50px" height="50px"></a>
@@ -46,23 +47,14 @@
             class="fa fa-caret-down"></i></button>
       </div>
     </div>
-    <div id="allDilemas">
-        <table>
-            <tr>
-                <th>Titulo Dilema</th>
-                <th></th>
-                <th></th>
-            </tr>
-            <?php
-              if(isset($_SESSION["usuario"])){
-                crearListadoDilemas();
-              }
-              crearListadoDilemas();
-            ?>
-        </table>
+    <hr>
+    
+    <div id="contenido2">
+        <div class="button-container-2" style="margin-left: 13%;">
+        <span class="mas">Dilema</span>
+        <button onclick="window.location.href='/listarDilemas.php'" id="work" type="button" name="Hover">Listar</button>
+        </div> 
     </div>
-
-
 
     <div class="Footer">
       <div id="footerContacto" class="ContenidoFooter">Correo: eramire1@xtec.cat</div>

@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require 'utiles/datosUser.php';
     if(isset($_SESSION["usuario"])){
     }
 ?>
@@ -48,18 +49,17 @@
       </div>
     </div>
     <hr>
-        <div id="contenido2">
-          <div class="button-container-2" style="margin-left: 13%;">
-            <span class="mas">Dilemas</span>
-            <button onclick="window.location.href='/listarDilemas.php'" id="work" type="button" name="Hover">Listar</button>
-          </div> 
-
-          <div class="button-container-2" style="margin-top: -6.8%;margin-left: 55%;">
-            <span class="mas">Perfil</span>
-            <button onclick="window.location.href='/perfilUsuario.php'" id="work" type="button" name="Hover">Perfil</button>
-          </div> 
-
+    
+    <div id="contenido2">
+        <h2 style="text-align:center">Perfil Usuario</h2>
+        <div class="card" style="text-align:center">
+          <?php
+            $idUsuario = 2;
+            datosUsuario($idUsuario);
+          ?>
+        </div>
     </div>
+    
 
     <div class="Footer">
       <div id="footerContacto" class="ContenidoFooter">Correo: eramire1@xtec.cat</div>

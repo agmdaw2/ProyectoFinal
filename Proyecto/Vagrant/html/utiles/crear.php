@@ -5,7 +5,7 @@
         $titulo_dilema = $_POST['titulo_dilema'];
         
         // Create connection
-        $conn = new mysqli("localhost", "root", "password", "tecnoticos");
+        $conn = new mysqli("localhost", "root", "admin", "tecnoticos");
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -40,53 +40,67 @@
                                 $ultimoID = $row[0]; 
                             }
                         }
-                        
-                        //Separar las preguntas para hacer posteriormente su INSERT individual
-
-                        $tipoNumeracion='p';
-
-                        // Averiguaremos de que tipo de Enumeracion sera
-                        if(strlen(strstr($actividades,'<ul>'))>0){
-                            $tipoNumeracion= 'ul';
-                        }
-
-                        if(strlen(strstr($actividades,'<ol>'))>0){
-                            $tipoNumeracion= 'ol';
-                        }
 
                         //Extraemos cada una de las preguntas escritas y hacemos los INSERTS en la tabla PREGUNTA
                         $dom = new DOMDocument;
                         $dom->loadHTML($actividades);
-
-                        if($li = $dom->getElementsByTagName('li')){
-                            foreach($li as $list){
-                                //echo $list->nodeValue, PHP_EOL;
-                                $sql = "INSERT INTO pregunta (texto_pregunta, tipo_numeracion, id_dilema)  
-                                VALUES ('$list->nodeValue', '$tipoNumeracion', '$ultimoID')";
-                                
-                                if ($conn->query($sql) === TRUE) {
-                                } else {
-                                    echo "Error: " . $sql . "<br>" . $conn->error;
-                                }
-                            }
-                        }
-
-                        if($p = $dom ->getElementsByTagName('p')){
-                            foreach($p as $list){
-                                //echo $list->nodeValue, PHP_EOL;
-                                $sql = "INSERT INTO pregunta (texto_pregunta, tipo_numeracion, id_dilema)  
-                                VALUES ('$list->nodeValue', '$tipoNumeracion', '$ultimoID')";
-                                if ($conn->query($sql) === TRUE) {
-                                } else {
-                                    echo "Error: " . $sql . "<br>" . $conn->error;
-                                }
-                            }
-                        }
+                        insertsPreg($dom, '', $ultimoID);
 
                     }
                 }
             }
         }
         $conn->close();
+    }
+
+    function insertsPreg(DOMNode $domNode, $tipo, $ultimoDilemaID) {
+        $tipoNumeracion=$tipo;
+         // Create connection
+         $conn = new mysqli("localhost", "root", "admin", "tecnoticos");
+         // Check connection
+         if ($conn->connect_error) {
+             die("Connection failed: " . $conn->connect_error);
+         }
+
+        foreach ($domNode->childNodes as $node)
+        {   
+            if($node->nodeName=='ul'|| $node->nodeName=='li'||$node->nodeName=='ol' || $node->nodeName=='p'){
+                
+                if($node->nodeName=='ul'){
+                    $tipoNumeracion = 'ul';
+                }
+
+                if($node->nodeName=='ol'){
+                    $tipoNumeracion = 'ol';
+                }
+
+                if($node->nodeName=='li'){
+                    //print $tipoNumeracion.'-'.$node->nodeName.':'.$node->nodeValue;
+                    $sql = "INSERT INTO pregunta (texto_pregunta, tipo_numeracion, id_dilema)  
+                        VALUES ('$node->nodeValue', '$tipoNumeracion', '$ultimoDilemaID')";
+                        
+                        if ($conn->query($sql) === TRUE) {
+                        } else {
+                            echo "Error: " . $sql . "<br>" . $conn->error;
+                        }
+                }
+
+                if($node->nodeName=='p'){
+                    $tipoNumeracion = 'p';
+                    //print $tipoNumeracion.'-'.$node->nodeName.':'.$node->nodeValue;
+                    $sql = "INSERT INTO pregunta (texto_pregunta, tipo_numeracion, id_dilema)  
+                        VALUES ('$node->nodeValue', '$tipoNumeracion', '$ultimoDilemaID')";
+                        
+                        if ($conn->query($sql) === TRUE) {
+                        } else {
+                            echo "Error: " . $sql . "<br>" . $conn->error;
+                        }
+                }
+            }
+            // en caso de tener Hijos el Nodo vuelve a llamar a la funcion
+            if($node->hasChildNodes()) {
+                insertsPreg($node, $tipoNumeracion, $ultimoDilemaID);
+            }
+        }    
     }
 ?>

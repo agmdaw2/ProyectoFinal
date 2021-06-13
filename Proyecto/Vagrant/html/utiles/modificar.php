@@ -1,20 +1,21 @@
 <?php
     session_start();
+// Create connection
+$conn = new mysqli("localhost", "root", "admin", "tecnoticos");
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+Global $contadorPreguntas;
 
     if((isset($_POST['titulo_dilema']) && !empty($_POST['titulo_dilema']))){
         $titulo_dilema = $_POST['titulo_dilema'];
         
-        // Create connection
-        $conn = new mysqli("localhost", "root", "password", "tecnoticos");
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-
         if((isset($_POST['recurso_dilema']) && !empty($_POST['recurso_dilema']))){
             $recurso_dilema = $_POST['recurso_dilema'];
             $idDilemaEscogido = $_POST['idDilemEscogido'];
-            $idPrimeraPregunta = $_POST['idPrimeraPregunta'];
+            $idPregunta = $_POST['idPrimeraPregunta'];
+            $contadorPreguntas = $idPregunta;
             if((isset($_POST['resumen_dilema']) && !empty($_POST['resumen_dilema']))){
                 $resumen_dilema = $_POST['resumen_dilema'];
                 
@@ -34,62 +35,97 @@
                     if((isset($_POST['actividad_dilema']) && !empty($_POST['actividad_dilema']))){
                         $actividades = $_POST['actividad_dilema'];
 
-                        // cuantas preguntas hay del dilema?
-                        $cantidadPreguntas = 0;
-                        $sql = "SELECT COUNT (*) pregunta WHERE id_dilema = $idDilemaEscogido";
-                        if ($result = $conn->query($sql)) {
+                        //ID ULTIMA PREGUNTA del DILEMA
+                        $ultimoIDPregunta = 0;
+                        $consulta = "SELECT MAX(id_pregunta) FROM pregunta WHERE id_dilema =$idDilemaEscogido";
+                        if ($result = $conn->query($consulta)) {
                             while ($row = $result->fetch_row()) {
-                                $cantidadPreguntas = $row[0]; 
+                                $ultimoIDPregunta = $row[0]; 
                             }
-                        } else {
-                            echo "Error: " . $sql . "<br>" . $conn->error;
                         }
-
-                        $tipoNumeracion='p';
-                        // Averiguaremos de que tipo de Enumeracion sera
-                        if(strlen(strstr($actividades,'<ul>'))>0){
-                            $tipoNumeracion= 'ul';
-                        }
-
-                        if(strlen(strstr($actividades,'<ol>'))>0){
-                            $tipoNumeracion= 'ol';
-                        }
+                        $ultimoIDPregunta++;
 
                         //Extraemos cada una de las preguntas escritas y hacemos los INSERTS en la tabla PREGUNTA
                         $dom = new DOMDocument;
                         $dom->loadHTML($actividades);
-
-                        if($li = $dom->getElementsByTagName('li')){
-                            foreach($li as $list){
-                                //echo $list->nodeValue, PHP_EOL;
-                                $sql = "UPDATE pregunta SET texto_pregunta = '$list->nodeValue', tipo_numeracion = '$tipoNumeracion',
-                                                            id_dilema = $idDilemaEscogido
-                                                                WHERE id_pregunta = $idPrimeraPregunta";
-                                if ($conn->query($sql) === TRUE) {
-                                } else {
-                                    echo "Error: " . $sql . "<br>" . $conn->error;
-                                }
-                            }
-                        }
-
-                        if($p = $dom ->getElementsByTagName('p')){
-                            foreach($p as $list){
-                                // echo $list->nodeValue, PHP_EOL;
-                                $sql = "UPDATE pregunta SET texto_pregunta = '$list->nodeValue', tipo_numeracion = '$tipoNumeracion',
-                                                            id_dilema = $idDilemaEscogido
-                                                                WHERE id_pregunta = $idPrimeraPregunta";
-                                if ($conn->query($sql) === TRUE) {
-                                } else {
-                                    echo "Error: " . $sql . "<br>" . $conn->error;
-                                }
-                            }
-                        }
-
+                        insertsPreg($dom, '', $idDilemaEscogido, $ultimoIDPregunta, $conn);
                     }
+
                 }
             }
         }
         $conn->close();
         header("Location: ./listarDilemas.php");
+    }
+
+    function insertsPreg(DOMNode $domNode, $tipo, $idDilemaEscogido, $ultimoIDPregunta) {
+        $tipoNumeracion=$tipo;
+        // Create connection
+        $conn = new mysqli("localhost", "root", "admin", "tecnoticos");
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        
+        foreach ($domNode->childNodes as $node){   
+            
+            if($node->nodeName=='li'|| $node->nodeName=='p'){
+                
+                if($node->nodeName=='li'){
+                    $tipoNumeracion = 'ol';
+                    $GLOBALS['contadorPreguntas'];
+                    // print "Dilema:".$idDilemaEscogido.", Pregunta: ". $GLOBALS['contadorPreguntas'].", Numer: ". $tipoNumeracion.'-'.$node->nodeValue;
+                    // echo "<br>";
+                    // $GLOBALS['contadorPreguntas']= $GLOBALS['contadorPreguntas']+1;
+                    $idPregunta = $GLOBALS['contadorPreguntas'];
+                    if($idPregunta<$ultimoIDPregunta){
+                        $sql = "UPDATE pregunta SET texto_pregunta = '$node->nodeValue', tipo_numeracion = '$tipoNumeracion'
+                                                    WHERE id_pregunta = $idPregunta";
+                        if ($conn->query($sql) === TRUE) {
+                            $GLOBALS['contadorPreguntas']= $GLOBALS['contadorPreguntas']+1;
+                        } else {
+                            echo "Error: " . $sql . "<br>" . $conn->error;
+                        }
+                    }else{
+                        $sql = "INSERT INTO pregunta (texto_pregunta, tipo_numeracion, id_dilema)  
+                                    VALUES ('$node->nodeValue', '$tipoNumeracion', '$idDilemaEscogido')";
+                        if ($conn->query($sql) === TRUE) {
+                        } else {
+                            echo "Error: " . $sql . "<br>" . $conn->error;
+                        }
+                    }
+                }
+
+                if($node->nodeName=='p'){
+                    $tipoNumeracion = 'p';
+                    // print "Dilema:".$idDilemaEscogido.", Pregunta: ". $GLOBALS['contadorPreguntas'].", Numer: ". $tipoNumeracion.'-'.$node->nodeValue;
+                    // echo "<br>";
+                    // $GLOBALS['contadorPreguntas']= $GLOBALS['contadorPreguntas']+1;
+                    $idPregunta = $GLOBALS['contadorPreguntas'];
+                    if($idPregunta<$ultimoIDPregunta){
+                        $sql = "UPDATE pregunta SET texto_pregunta = '$node->nodeValue', tipo_numeracion = '$tipoNumeracion'
+                                                    WHERE id_pregunta = $idPregunta";
+                        if ($conn->query($sql) === TRUE) {
+                            $GLOBALS['contadorPreguntas']= $GLOBALS['contadorPreguntas']+1;
+                        } else {
+                            echo "Error: " . $sql . "<br>" . $conn->error;
+                        }
+                    }
+                    if($idPregunta>$ultimoIDPregunta){
+                        $sql = "INSERT INTO pregunta (texto_pregunta, tipo_numeracion, id_dilema)  
+                        VALUES ('$node->nodeValue', 'p', '$idDilemaEscogido')";
+                        
+                        if ($conn->query($sql) === TRUE) {
+                        } else {
+                            echo "Error: " . $sql . "<br>" . $conn->error;
+                        }
+                    }
+                }
+            }
+            // en caso de tener Hijos el Nodo vuelve a llamar a la funcion
+            if($node->hasChildNodes()) {
+                insertsPreg($node, $tipoNumeracion, $idDilemaEscogido, $ultimoIDPregunta);
+            }
+        }    
     }
 ?>

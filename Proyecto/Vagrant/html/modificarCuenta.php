@@ -58,7 +58,7 @@
     <hr>
     
     <div id="contenido2">
-        <h2 style="text-align:center">Perfil Usuario</h2>
+        <h2 style="margin-left: 30%; margin-top: 10%">Perfil Usuario</h2>
         <div class="card" style="text-align:center">
           <form method='POST'>
             <?php

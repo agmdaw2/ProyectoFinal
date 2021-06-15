@@ -1,10 +1,10 @@
 <?php
-    function datosUsuario($idUsuario){
-        
+    function datosUsuario(){
+        $idUsuario = $_SESSION['user_id'];
+
         $servername = "localhost";
         $username = "root";
-        $password = "admin";
-    
+        $password = "password";
         try {
         $conn = new PDO("mysql:host=$servername;dbname=tecnoticos", $username, $password);
         // set the PDO error mode to exception
@@ -37,22 +37,24 @@
                 <input type='hidden' name='contraseña' value='false'>
                 <input type='submit' value='Modificar Perfil' formaction='./modificarCuenta.php'>
             </form>";
-        // echo "<form method='POST'>
-        //     <input type='hidden' name='idUsuario' value='". $idUsuario ."'>
-        //     <input type='hidden' name='contraseña' value='true'>
-        //     <input type='submit' value='Modificar Contraseña' formaction='./modificarCuenta.php'>
-        // </form>"; 
-        echo " <form method='POST'>
+        echo "<form method='POST'>
+            <input type='hidden' name='idUsuario' value='". $idUsuario ."'>
+            <input type='hidden' name='contraseña' value='true'>
+            <input type='submit' value='Modificar Contraseña' formaction='./modificarCuenta.php'>
+        </form>"; 
+        if($_SESSION['role'] == "usuario"){
+            echo " <form method='POST'>
                 <input type='hidden' name='borrar' value='". $idUsuario ."'>
                 <input type='submit' value='Eliminar Cuenta' formaction='./eliminarCuenta.php'>
-            </form>";
+            </form>";  
+        }
     }
 
     function modificarDatosUsuario($idUsuario, $esContraseña){
 
         $servername = "localhost";
         $username = "root";
-        $password = "admin";
+        $password = "password";
     
         try {
         $conn = new PDO("mysql:host=$servername;dbname=tecnoticos", $username, $password);
@@ -96,17 +98,27 @@
             }
             echo "<br>";
             echo "<input type='hidden' name='idUsuario' value='". $idUsuario ."'>
-                    <input type='submit' value='Guardar Cambios' formaction='utiles/modCuenta.php'>";
+                    <input type='submit' value='Guardar Cambios' formaction='./utiles/modCuenta.php'>";
         }
 
-        // if($esContraseña == 'true'){
-        //     $consulta = $conn->prepare("SELECT contraseña FROM usuario WHERE id_usuario = $idUsuario");
-        //     $consulta->setFetchMode(PDO::FETCH_ASSOC);
-        //     $consulta->execute();
+        if($esContraseña == 'true'){
+            $consulta = $conn->prepare("SELECT contraseña FROM usuario WHERE id_usuario = $idUsuario");
+            $consulta->setFetchMode(PDO::FETCH_ASSOC);
+            $consulta->execute();
 
-        //     while ($row = $consulta->fetch()) {
-        //         echo "<p>Edad: <input name='contraseña' type='password' value ='".$row['contraseña']."'></input> </p>";
-        //     }
-        // }
+            while ($row = $consulta->fetch()) {
+                echo "<label>Contraseña Nueva</label>";
+                // echo "<input name='contraseña' type='password' value ='".$row['contraseña']."'></input>";
+                echo "<div class='form-row'>
+                    <div class='col'>
+                        <input class='form-control' type='password' name='contraseña' id='password' value ='".$row['contraseña']."'>
+                    </div>
+                    <div class='col'>
+                        <button id='txtBotonModPass' class='btn btn-primary' type='button' onclick='mostrarContrasena()'>Mostrar Contraseña</button>
+                    </div>";
+                echo "<input type='hidden' name='idUsuario' value='". $idUsuario ."'>
+                    <input type='submit' value='Guardar Cambios' formaction='utiles/modCuenta.php'>";
+            }
+        }
     }
 ?>

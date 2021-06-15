@@ -18,13 +18,18 @@
             <img src="img/logotipo.png" alt="logo" width="300px" height="90px">
         </div>
         <div class="Login-Registro">
-            <a href="Login.php"><img src="img/Perfil.png" alt="Perfil" width="50px" height="50px"></a>
+        
             <?php
-                if($_SESSION['role'] == "admin"){
-                    echo'<a href="inicioAdmin.php"><img src="img/menu_adm.png" alt="menuAdm" width="80px" height="50px"></a>';
-                  }
                 if(isset($_SESSION["usuario"])){
+                    if($_SESSION['role'] == "admin"){
+                        echo'<a href="inicioAdmin.php"><img src="img/menu_adm.png" alt="menuAdm" width="60px" height="50px"></a>';
+                      }
+                    if($_SESSION['role'] == "usuario"){
+                        echo'<a href="inicioUser.php"><img src="img/menu_adm.png" alt="menuAdm" width="60px" height="50px"></a>';
+                    }
                     echo'<a href="logout.php"><img src="img/logout.png" alt="Logout" width="50px" height="50px"></a>';
+                }else{
+                    echo "<a href='Login.php'><img src='img/Perfil.png' alt='Perfil' width='50px' height='50px'></a>";
                 }
             ?>
         </div>

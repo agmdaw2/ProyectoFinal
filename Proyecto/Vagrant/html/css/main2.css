@@ -126,6 +126,14 @@ html, body {
     overflow: scroll;
     overflow-x: hidden!important;
 }
+  #contenidoUsuario{
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    margin: 10px;
+    padding: 10px;
+  }
+
 
   #contenido2 {
     padding-bottom: 50px; /* este valor debe ser igual o mayor al alto del pie */
@@ -198,6 +206,7 @@ html, body {
   }
 
   #dilemaSeleccionado p{
+    font-size:25px;
     text-align: center;
     margin-top: 15%;
     margin-bottom: 10%;
@@ -439,6 +448,7 @@ html, body {
   }
   
   .button-container-2 {
+    display: inline-block;
     position: relative;
     width: 100px;
     height: 50px;
@@ -567,4 +577,17 @@ html, body {
   }
   a {
     color: #00ff95;
+  }
+
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+  .title {
+    color: grey;
+    font-size: 18px;
   }

@@ -61,7 +61,7 @@ Global $contadorPreguntas;
     function insertsPreg(DOMNode $domNode, $tipo, $idDilemaEscogido, $ultimoIDPregunta) {
         $tipoNumeracion=$tipo;
         // Create connection
-        $conn = new mysqli("localhost", "root", "admin", "tecnoticos");
+        $conn = new mysqli("localhost", "root", "password", "tecnoticos");
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -75,8 +75,6 @@ Global $contadorPreguntas;
                     $tipoNumeracion = 'ol';
                     $GLOBALS['contadorPreguntas'];
                     // print "Dilema:".$idDilemaEscogido.", Pregunta: ". $GLOBALS['contadorPreguntas'].", Numer: ". $tipoNumeracion.'-'.$node->nodeValue;
-                    // echo "<br>";
-                    // $GLOBALS['contadorPreguntas']= $GLOBALS['contadorPreguntas']+1;
                     $idPregunta = $GLOBALS['contadorPreguntas'];
                     if($idPregunta<$ultimoIDPregunta){
                         $sql = "UPDATE pregunta SET texto_pregunta = '$node->nodeValue', tipo_numeracion = '$tipoNumeracion'
@@ -99,8 +97,6 @@ Global $contadorPreguntas;
                 if($node->nodeName=='p'){
                     $tipoNumeracion = 'p';
                     // print "Dilema:".$idDilemaEscogido.", Pregunta: ". $GLOBALS['contadorPreguntas'].", Numer: ". $tipoNumeracion.'-'.$node->nodeValue;
-                    // echo "<br>";
-                    // $GLOBALS['contadorPreguntas']= $GLOBALS['contadorPreguntas']+1;
                     $idPregunta = $GLOBALS['contadorPreguntas'];
                     if($idPregunta<$ultimoIDPregunta){
                         $sql = "UPDATE pregunta SET texto_pregunta = '$node->nodeValue', tipo_numeracion = '$tipoNumeracion'

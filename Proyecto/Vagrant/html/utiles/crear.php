@@ -5,7 +5,7 @@
         $titulo_dilema = $_POST['titulo_dilema'];
         
         // Create connection
-        $conn = new mysqli("localhost", "root", "admin", "tecnoticos");
+        $conn = new mysqli("localhost", "root", "password", "tecnoticos");
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -56,7 +56,7 @@
     function insertsPreg(DOMNode $domNode, $tipo, $ultimoDilemaID) {
         $tipoNumeracion=$tipo;
          // Create connection
-         $conn = new mysqli("localhost", "root", "admin", "tecnoticos");
+         $conn = new mysqli("localhost", "root", "password", "tecnoticos");
          // Check connection
          if ($conn->connect_error) {
              die("Connection failed: " . $conn->connect_error);

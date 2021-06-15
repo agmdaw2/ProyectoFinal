@@ -187,5 +187,5 @@ cd /vagrant && composer install --dev
 php /vagrant/artisan migrate --seed
 
 # Change apache document root
-sed -i 's/index.html/Login.php/g' /etc/apache2/mods-available/dir.conf
+#sed -i 's/index.html/Login.php/g' /etc/apache2/mods-available/dir.conf
 sudo service apache2 restart

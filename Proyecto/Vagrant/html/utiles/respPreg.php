@@ -1,6 +1,5 @@
 <?php
     session_start();
-    // Create connection
 
     function  respPreg($id, $estoyLogeado){
         $servername = "localhost";
@@ -23,8 +22,7 @@
         $result->execute();
 
         echo "<div id='dilemaAll'>";
-        //HAY QUE borrar la linea siguiente
-        //$estoyLogeado = true;
+
         if($estoyLogeado == true){
             echo "<form method='POST' action>";
         }
@@ -47,7 +45,10 @@
                 if($row['tipo_numeracion'] == 'p'){
                     echo "<div>Activitat.".$contadorActividades++."</div>";
                 }
-                echo "<div id='parrafoLink'>".$row['texto_pregunta']."</div>";
+                echo "<div id='parrafoPreg'>".$row['texto_pregunta']."</div>";
+                    if($contador == 1){
+                        echo "<div>Activitat.".$contadorActividades++."</div>";
+                    }
                 if($row['tipo_numeracion'] == 'ul' || $row['tipo_numeracion'] == 'ol'){
                     echo "<input name='texto_respuesta[".$row['id_pregunta']."][respuesta]' type='text' placeholder='Contesta aquí'>";
                     echo "<input name='texto_respuesta[".$row['id_pregunta']."][respuesta_id]' type='hidden' value='".$row['id_pregunta']."'>";
@@ -69,8 +70,7 @@
 
         if(isset($_POST['texto_respuesta']) && !empty($_POST['texto_respuesta'])){
 
-            $idUsuario = $_SESSION['idUsuario'];
-            //$idUsuario = 1;
+            $idUsuario = $_SESSION['user_id'];
 
             foreach ($_POST['texto_respuesta'] as $key => $values){
                 $txt_Respuesta = $values['respuesta'];

@@ -2,7 +2,7 @@
     function crearListadoDilemas(){
         $servername = "localhost";
         $username = "root";
-        $password = "admin";
+        $password = "password";
     
         try {
         $conn = new PDO("mysql:host=$servername;dbname=tecnoticos", $username, $password);
@@ -16,24 +16,16 @@
         $result->setFetchMode(PDO::FETCH_ASSOC);
         $result->execute();
 
-        // $_SESSION['user_id'] = $usuario['id_usuario'];
-        // $_SESSION['role'] = $usuario['rol'];
-
-        //ESTATICO HAY QUE CAMBIARLO CON LAS SESSION DE ARRIBA
-        $rol = 'admin';
-        $rol2 = 'usuario';
-        $user = $rol2;
-        $idUsuario = 2;
+        $idUsuario = $_SESSION['user_id'];
 
         while ($row = $result->fetch()) {
             echo "<tr>";
-            
             $aBorrar = array('<h2>','</h2>','<strong>','</strong>','<p>','</p>');
             $textoDilema = str_replace($aBorrar,"", $row['titulo_dilema']);
             echo "<td>".$textoDilema."</td>";
             $idprueba = $row['id_dilema'];
-            // if($_SESSION['rol'] == 'admin'){
-            if($user == 'admin'){
+
+            if($_SESSION['role'] == 'admin'){
                 echo "<td>
                     <form method='POST'>
                         <input type='hidden' name='modificar' value=". $row['id_dilema'] .">
@@ -49,26 +41,25 @@
                 </td>";
             }
 
-            // if($_SESSION['rol'] == 'usuario'){
-                if($user == 'usuario'){
-                    $consulta = $conn->prepare("SELECT CASE WHEN EXISTS(SELECT 1 FROM respuesta  WHERE id_usuario = $idUsuario AND id_dilema = $idprueba)
-                                                    THEN 'true'
-                                                    ELSE 'false'
-                                                END AS 'boolean'");
-                    $consulta->setFetchMode(PDO::FETCH_ASSOC);
-                    $consulta->execute();
-                    while ($row = $consulta->fetch()){
-                        if($row['boolean'] == 'true'){
-                            echo "<td>
-                                <a><img src='img/activado.png'></a>
-                            </td>";
-                        }else{
-                            echo "<td>
-                                <a href='respPreguntas.php?dilema=".$idprueba."'><img src='img/noactivado.png'></a>
-                            </td>";
-                        }
+            if($_SESSION['role'] == 'usuario'){
+                $consulta = $conn->prepare("SELECT CASE WHEN EXISTS(SELECT 1 FROM respuesta  WHERE id_usuario = $idUsuario AND id_dilema = $idprueba)
+                                                THEN 'true'
+                                                ELSE 'false'
+                                            END AS 'boolean'");
+                $consulta->setFetchMode(PDO::FETCH_ASSOC);
+                $consulta->execute();
+                while ($row = $consulta->fetch()){
+                    if($row['boolean'] == 'true'){
+                        echo "<td>
+                            <a><img src='img/activado.png'></a>
+                        </td>";
+                    }else{
+                        echo "<td>
+                            <a href='respPreguntas.php?dilema=".$idprueba."'><img src='img/noactivado.png'></a>
+                        </td>";
                     }
                 }
+            }
 
         }
     }

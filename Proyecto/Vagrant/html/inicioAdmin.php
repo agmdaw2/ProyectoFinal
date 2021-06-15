@@ -20,15 +20,19 @@
     <a href="index.php"><img src="img/logotipo.png" alt="logo" width="300px" height="90px"></a>
   </div>
     <div class="Login-Registro">
-      <a href="Login.php"><img src="img/Perfil.png" alt="Perfil" width="50px" height="50px"></a>
-        <?php
-          if($_SESSION['role'] == "admin"){
-            echo'<a href="inicioAdmin.php"><img src="img/menu_adm.png" alt="menuAdm" width="80px" height="50px"></a>';
-          }
+      <?php
           if(isset($_SESSION["usuario"])){
-            echo'<a href="logout.php"><img src="img/logout.png" alt="Logout" width="50px" height="50px"></a>';
+              if($_SESSION['role'] == "admin"){
+                  echo'<a href="inicioAdmin.php"><img src="img/menu_adm.png" alt="menuAdm" width="60px" height="50px"></a>';
+                }
+              if($_SESSION['role'] == "usuario"){
+                  echo'<a href="inicioUser.php"><img src="img/menu_adm.png" alt="menuAdm" width="60px" height="50px"></a>';
+              }
+              echo'<a href="logout.php"><img src="img/logout.png" alt="Logout" width="50px" height="50px"></a>';
+          }else{
+              echo "<a href='Login.php'><img src='img/Perfil.png' alt='Perfil' width='50px' height='50px'></a>";
           }
-        ?>
+      ?>
     </div>
     <div class="navbar">
       <div class="subnav">
@@ -59,19 +63,23 @@
               <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div> -->
-        <div id="contenido2">
-          <div class="button-container-2" style="margin-left: 13%;">
-            <span class="mas">Crear dilema</span>
-            <button onclick="window.location.href='/crearDilema.php'" id="work" type="button" name="Hover">Crear dilema</button>
+        <div id="contenidoUsuario">
+          <div class="button-container-2">
+            <span class="mas">Dilema</span>
+            <button onclick="window.location.href='/crearDilema.php'" id="work" type="button" name="Hover">Crear</button>
           </div> 
 
-          <div class="button-container-2" style="margin-top: -6.8%;margin-left: 55%;">
+          <div class="button-container-2">
             <span class="mas">Consulta</span>
             <button onclick="window.location.href='/descargar.php'" id="work" type="button" name="Hover">Consulta</button>
           </div> 
-          <div class="button-container-2" style="margin-top: -6.8%;margin-left: 55%;">
-            <span class="mas">Listar Dilemas</span>
-            <button onclick="window.location.href='/listarDilemas.php'" id="work" type="button" name="Hover">Consulta</button>
+          <div class="button-container-2">
+            <span class="mas">Dilemas</span>
+            <button onclick="window.location.href='/listarDilemas.php'" id="work" type="button" name="Hover">Listar</button>
+          </div>
+          <div class="button-container-2" >
+            <span class="mas">Perfil</span>
+            <button onclick="window.location.href='/perfilUsuario.php'" id="work" type="button" name="Hover">Perfil</button>
           </div> 
         </div>
     </div>

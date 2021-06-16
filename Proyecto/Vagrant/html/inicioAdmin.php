@@ -74,7 +74,7 @@
             <button onclick="window.location.href='/descargar.php'" id="work" type="button" name="Hover">Consulta</button>
           </div> 
           <div class="button-container-2">
-            <span class="mas">Listar</span>
+            <span class="mas">Dilemas</span>
             <button onclick="window.location.href='/listarDilemas.php'" id="work" type="button" name="Hover">Listar</button>
           </div>
           <div class="button-container-2" >

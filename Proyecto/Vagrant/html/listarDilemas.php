@@ -53,7 +53,7 @@
             class="fa fa-caret-down"></i></button>
       </div>
     </div>
-    <div id="allDilemas">
+    <div id="allDilemas" style="margin-left:32%; margin-top:5%">
         <table>
             <tr>
                 <th>Titulo Dilema</th>

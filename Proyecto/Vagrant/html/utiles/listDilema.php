@@ -29,14 +29,32 @@
                 echo "<td>
                     <form method='POST'>
                         <input type='hidden' name='modificar' value=". $row['id_dilema'] .">
-                        <input type='submit' value='Modificar' formaction='./modificarDilema.php'>
+                        <input type='submit' value='Modificar' style='background-color:black;
+                        display: block;
+                        text-align: center;
+                        border: 2px solid #2ecc71;
+                        padding: 14px 40px;
+                        outline: none;
+                        color: white;
+                        border-radius: 24px;
+                        transition: 0.25s;
+                        cursor: pointer;' formaction='./modificarDilema.php'>
                     </form>
                 </td>";
 
                 echo "<td>
                     <form method='POST'>
                         <input type='hidden' name='borrar' value=". $row['id_dilema'] .">
-                        <input type='submit' value='Borrar' formaction='./borrar.php'>
+                        <input type='submit' value='Borrar' style='background-color:black;
+                        display: block;
+                        text-align: center;
+                        border: 2px solid red;
+                        padding: 14px 40px;
+                        outline: none;
+                        color: white;
+                        border-radius: 24px;
+                        transition: 0.25s;
+                        cursor: pointer;' formaction='./borrar.php'>
                     </form>
                 </td>";
             }

@@ -37,11 +37,11 @@
                 <input type='hidden' name='contraseña' value='false'>
                 <input type='submit' value='Modificar Perfil' formaction='./modificarCuenta.php'>
             </form>";
-        echo "<form method='POST'>
+        echo "<br><form method='POST'>
             <input type='hidden' name='idUsuario' value='". $idUsuario ."'>
             <input type='hidden' name='contraseña' value='true'>
             <input type='submit' value='Modificar Contraseña' formaction='./modificarCuenta.php'>
-        </form>"; 
+        </form> <br>"; 
         if($_SESSION['role'] == "usuario"){
             echo " <form method='POST'>
                 <input type='hidden' name='borrar' value='". $idUsuario ."'>

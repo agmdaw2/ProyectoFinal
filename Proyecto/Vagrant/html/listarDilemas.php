@@ -56,9 +56,7 @@
     <div id="allDilemas" style="margin-left:32%; margin-top:5%">
         <table>
             <tr>
-                <th>Titulo Dilema</th>
-                <th></th>
-                <th></th>
+                <th><h2>Titulo Dilema</h2> </th>
             </tr>
             <?php
               if(isset($_SESSION["usuario"])){

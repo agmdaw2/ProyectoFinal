@@ -608,3 +608,20 @@ html, body {
     color: grey;
     font-size: 18px;
   }
+
+  .labelFiltro{
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .nombreDilemasListado {
+    font-family: "Comic Sans MS";
+    border-bottom: 2px solid #999;
+  }
+
+  th {
+    font-family: "Comic Sans MS";
+    border-top: 4px solid #999;
+    border-bottom: 4px solid #999;
+    border-radius: 6px;
+  }

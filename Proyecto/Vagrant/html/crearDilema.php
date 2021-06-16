@@ -61,23 +61,23 @@ if($_SESSION['role'] == 'usuario' || $_SESSION['role'] !== 'admin') {
     <div id="contenido3">
       <form action="" method="post">
         <div class="form-group">
-          <label for="titulo">Titulo: </label>
+          <label class='labelFiltro' for="titulo">Titulo: </label>
         </div>
         <textarea type="text" name="titulo_dilema" class="form-control input-sm editor" id="titulo" placeholder="Titulo dilema"></textarea>
         <div class="form-group">
-          <label for="resumen">Resumen: </label>
+          <label class='labelFiltro' for="resumen">Resumen: </label>
         </div>
         <textarea name="resumen_dilema" class="form-control editor" id="resumen" cols="60" rows="3"></textarea>
         <div class="form-group">
-          <label for="descripcion">Descripcion: </label>
+          <label class='labelFiltro' for="descripcion">Descripcion: </label>
         </div>
         <textarea name="descripcion_dilema" class="form-control editor" id="descripcion" cols="60" rows="6"></textarea>
         <div class="form-group">
-          <label for="recursos">Recursos: </label>
+          <label class='labelFiltro' for="recursos">Recursos: </label>
         </div>
         <textarea name="recurso_dilema" class="form-control editor" id="recursos" cols="60" rows="5"></textarea>
         <div class="form-group">
-          <label for="actividad">Actividad: </label>
+          <label class='labelFiltro' for="actividad">Actividad: </label>
         </div>
         <textarea name="actividad_dilema" class="form-control editor" id="actividad" cols="60" rows="6"></textarea>
         <br>

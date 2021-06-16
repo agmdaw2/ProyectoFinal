@@ -6,8 +6,10 @@ function tipoSelectorEdad(){
     document.getElementById('filtroEdad').innerHTML='';
     label = document.createElement('label');
     label.setAttribute('for', 'filtroEdad');
+    label.setAttribute('class', 'labelFiltro');
     var input = null;
     var inputDos = null;
+    var br = document.createElement('br');
 
     if(tipo=='R'){
         label.innerHTML='Elige el rango de edad';
@@ -37,6 +39,7 @@ function tipoSelectorEdad(){
     }
 
     nodoPadre.appendChild(label);
+    nodoPadre.appendChild(br);
     nodoPadre.appendChild(input);
     nodoPadre.appendChild(inputDos);
 }

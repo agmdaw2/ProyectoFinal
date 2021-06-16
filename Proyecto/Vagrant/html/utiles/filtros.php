@@ -16,7 +16,7 @@
         echo "<form method='POST'>";
 
         echo "<div class='filtros3'><div id='filtroInstituto' class='filtroI'>";
-        echo "<label>Elige el/los Institutos: </label><br>";
+        echo "<label class='labelFiltro'>Elige el/los Institutos: </label><br>";
         $result = $conn->prepare("SELECT instituto.nombre_instituto, instituto.id_instituto FROM instituto");
         $result->setFetchMode(PDO::FETCH_ASSOC);
         $result->execute();
@@ -30,7 +30,7 @@
 
         //filtro EDAD
         echo "<div id='filtroEdad' class='filtroE'>";
-        echo "<label>Elige el formato de edad:</label>";        
+        echo "<label class='labelFiltro'>Elige el formato de edad:</label><br>";        
         echo "<select onchange='tipoSelectorEdad()' id='selectTipoEdad'>";
         echo "<option selected='selected' disabled='disabled'>Tipo</option>";
         echo "<option value='R'>Rango de Edad</option>";
@@ -41,7 +41,7 @@
 
         //filtro SEXO
         echo "<div id='filtroSexo' class='filtroG'>";
-        echo "<label>Elige el genero:</label>";        
+        echo "<label class='labelFiltro'>Elige el genero:</label>";        
         echo "<select name='filtro[sexo]' id='selectSexo' required>";
         echo "<option selected='selected' disabled='disabled'>Tipo</option>";
         echo "<option value='I'>Indefinido</option>";
@@ -53,7 +53,7 @@
 
         //filtro DILEMA
         echo "<div class='filtros2'><div id='filtroDilema' class='filtroD'>";
-        echo "<label>Elige el/los Dilemas: </label><br>";
+        echo "<label class='labelFiltro'>Elige el/los Dilemas: </label><br>";
         $result = $conn->prepare("SELECT dilema.titulo_dilema, dilema.id_dilema FROM dilema");
         $result->setFetchMode(PDO::FETCH_ASSOC);
         $result->execute();
@@ -70,7 +70,7 @@
 
         //filtro PREGUNTA
         echo "<div id='filtroPregunta' class='filtroP'>";
-        echo "<label>Elige el/las Preguntas: </label><br>";
+        echo "<label class='labelFiltro'>Elige el/las Preguntas: </label><br>";
         $result = $conn->prepare("SELECT pregunta.texto_pregunta, pregunta.id_pregunta, pregunta.id_dilema FROM pregunta WHERE tipo_numeracion ='ul' OR tipo_numeracion ='ol'");
         $result->setFetchMode(PDO::FETCH_ASSOC);
         $result->execute();
@@ -81,7 +81,7 @@
         echo "</div></div>";
 
         echo "<br>";
-        echo "<input type='submit' value='Guarda los filtros' id='enviar' name='submit'>";
+        echo "<input type='submit' value='Guarda los filtros' id='enviar' name='submit' style='margin-left: 10%;'>";
 
         echo "</form>";
         echo "</div>";
@@ -215,13 +215,6 @@
             
         }
 
-        // else{
-        //     echo'<script type="text/javascript"> 
-        //     alert("Te ha faltado seleccionar el Instituto");
-        //     window.location.href="descargar.php";
-        //     </script>';
-        // }
-
         //imprimirBR();
     }
     function imprimirBR(){
@@ -307,24 +300,26 @@
                             OR usuario.sexo = 'M'
                             OR usuario.sexo = 'H')
                             AND usuario.edad = $edadBien
-                            AND instituto.id_instituto = '$institutoId'
-                            AND dilema.id_dilema = '$dilemaId'
-                            AND pregunta.id_pregunta = '$preguntaId'
-                            AND pregunta.id_dilema = '$dilemaId'
-                            AND respuesta.id_pregunta = '$preguntaId'
-                            AND respuesta.id_usuario = usuario.id_usuario";
+                            AND instituto.id_instituto = $institutoId
+                            AND dilema.id_dilema = $dilemaId
+                            AND pregunta.id_pregunta = $preguntaId
+                            AND pregunta.id_dilema = $dilemaId
+                            AND respuesta.id_pregunta = $preguntaId
+                            AND respuesta.id_usuario = usuario.id_usuario
+                            AND usuario.id_instituto = $institutoId";
             }else{
                 $return ="SELECT instituto.nombre_instituto, usuario.edad, usuario.sexo,
                         dilema.titulo_dilema, pregunta.texto_pregunta, respuesta.texto_respuesta 
                         FROM usuario, instituto, dilema, pregunta, respuesta
                         WHERE usuario.sexo = '$genero'
                             AND usuario.edad = $edadBien
-                            AND instituto.id_instituto = '$institutoId'
-                            AND dilema.id_dilema = '$dilemaId'
-                            AND pregunta.id_pregunta = '$preguntaId'
-                            AND pregunta.id_dilema = '$dilemaId'
-                            AND respuesta.id_pregunta = '$preguntaId'
-                            AND respuesta.id_usuario = usuario.id_usuario";
+                            AND instituto.id_instituto = $institutoId
+                            AND dilema.id_dilema = $dilemaId
+                            AND pregunta.id_pregunta = $preguntaId
+                            AND pregunta.id_dilema = $dilemaId
+                            AND respuesta.id_pregunta = $preguntaId
+                            AND respuesta.id_usuario = usuario.id_usuario
+                            AND usuario.id_instituto = $institutoId";
             }
         }
         if($edadMinBien!=0){
@@ -337,12 +332,13 @@
                                     OR usuario.sexo = 'H')
                                     AND usuario.edad >= $edadMinBien
                                     AND usuario.edad <= $edadMaxBien
-                                    AND instituto.id_instituto = '$institutoId'
-                                    AND dilema.id_dilema = '$dilemaId'
-                                    AND pregunta.id_pregunta = '$preguntaId'
-                                    AND pregunta.id_dilema = '$dilemaId'
-                                    AND respuesta.id_pregunta = '$preguntaId'
-                                    AND respuesta.id_usuario = usuario.id_usuario";
+                                    AND instituto.id_instituto = $institutoId
+                                    AND dilema.id_dilema = $dilemaId
+                                    AND pregunta.id_pregunta = $preguntaId
+                                    AND pregunta.id_dilema = $dilemaId
+                                    AND respuesta.id_pregunta = $preguntaId
+                                    AND respuesta.id_usuario = usuario.id_usuario
+                                    AND usuario.id_instituto = $institutoId";
             }else{
                 $return ="SELECT instituto.nombre_instituto, usuario.edad, usuario.sexo,
                                         dilema.titulo_dilema, pregunta.texto_pregunta, respuesta.texto_respuesta 
@@ -351,11 +347,13 @@
                                             AND usuario.edad >= $edadMinBien
                                             AND usuario.edad <= $edadMaxBien
                                             AND instituto.id_instituto = '$institutoId'
-                                            AND dilema.id_dilema = '$dilemaId'
-                                            AND pregunta.id_pregunta = '$preguntaId'
-                                            AND pregunta.id_dilema = '$dilemaId'
-                                            AND respuesta.id_pregunta = '$preguntaId'
-                                            AND respuesta.id_usuario = usuario.id_usuario";
+                                            AND instituto.id_instituto = $institutoId
+                                            AND dilema.id_dilema = $dilemaId
+                                            AND pregunta.id_pregunta = $preguntaId
+                                            AND pregunta.id_dilema = $dilemaId
+                                            AND respuesta.id_pregunta = $preguntaId
+                                            AND respuesta.id_usuario = usuario.id_usuario
+                                            AND usuario.id_instituto = $institutoId";
             }
 
         }

@@ -67,7 +67,7 @@
     </div>
     <hr>
 
-    <div id="contenido7">
+    <div id="contenido3">
       <form action="" method="post">
         <div class="form-group">
           <label for="titulo">Titulo: </label>

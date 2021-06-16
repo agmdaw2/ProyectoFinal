@@ -22,7 +22,7 @@
             echo "<tr>";
             $aBorrar = array('<h2>','</h2>','<strong>','</strong>','<p>','</p>');
             $textoDilema = str_replace($aBorrar,"", $row['titulo_dilema']);
-            echo "<td>".$textoDilema."</td>";
+            echo "<td class='nombreDilemasListado';'>".$textoDilema."</td>";
             $idprueba = $row['id_dilema'];
 
             if($_SESSION['role'] == 'admin'){

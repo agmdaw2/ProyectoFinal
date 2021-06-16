@@ -35,17 +35,41 @@
         echo "<form method='POST'>
                 <input type='hidden' name='idUsuario' value='". $idUsuario ."'>
                 <input type='hidden' name='contraseña' value='false'>
-                <input type='submit' value='Modificar Perfil' formaction='./modificarCuenta.php'>
+                <input type='submit' value='Modificar Perfil' style='background-color:black;
+                text-align: center;
+                border: 2px solid green;
+                padding: 14px 40px;
+                outline: none;
+                color: white;
+                border-radius: 24px;
+                transition: 0.25s;
+                cursor: pointer;' formaction='./modificarCuenta.php'>
             </form>";
         echo "<br><form method='POST'>
             <input type='hidden' name='idUsuario' value='". $idUsuario ."'>
             <input type='hidden' name='contraseña' value='true'>
-            <input type='submit' value='Modificar Contraseña' formaction='./modificarCuenta.php'>
+            <input type='submit' value='Modificar Contraseña' style='background-color:black;
+            text-align: center;
+            border: 2px solid green;
+            padding: 14px 40px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s;
+            cursor: pointer;' formaction='./modificarCuenta.php'>
         </form> <br>"; 
         if($_SESSION['role'] == "usuario"){
             echo " <form method='POST'>
                 <input type='hidden' name='borrar' value='". $idUsuario ."'>
-                <input type='submit' value='Eliminar Cuenta' formaction='./eliminarCuenta.php'>
+                <input type='submit' value='Eliminar Cuenta' style='background-color:black;
+                text-align: center;
+                border: 2px solid red;
+                padding: 14px 40px;
+                outline: none;
+                color: white;
+                border-radius: 24px;
+                transition: 0.25s;
+                cursor: pointer;' formaction='./eliminarCuenta.php'>
             </form>";  
         }
     }
@@ -98,7 +122,17 @@
             }
             echo "<br>";
             echo "<input type='hidden' name='idUsuario' value='". $idUsuario ."'>
-                    <input type='submit' value='Guardar Cambios' formaction='./utiles/modCuenta.php'>";
+                    <input type='submit' value='Guardar Cambios' style='background-color:black;
+                    text-align: center;
+                    border: 2px solid green;
+                    margin-top: 5%;
+                    margin-bottom: 5%;
+                    padding: 14px 40px;
+                    outline: none;
+                    color: white;
+                    border-radius: 24px;
+                    transition: 0.25s;
+                    cursor: pointer;' formaction='./utiles/modCuenta.php'>";
         }
 
         if($esContraseña == 'true'){
@@ -114,10 +148,29 @@
                         <input class='form-control' type='password' name='contraseña' id='password' value ='".$row['contraseña']."'>
                     </div>
                     <div class='col'>
-                        <button id='txtBotonModPass' class='btn btn-primary' type='button' onclick='mostrarContrasena()'>Mostrar Contraseña</button>
+                        <button id='txtBotonModPass' class='btn btn-primary' type='button' style='background-color:black;
+                        text-align: center;
+                        margin-top: 5%;
+                        border: 2px solid green;
+                        padding: 14px 40px;
+                        outline: none;
+                        color: white;
+                        border-radius: 24px;
+                        transition: 0.25s;
+                        cursor: pointer;' onclick='mostrarContrasena()'>Mostrar Contraseña</button>
                     </div>";
                 echo "<input type='hidden' name='idUsuario' value='". $idUsuario ."'>
-                    <input type='submit' value='Guardar Cambios' formaction='utiles/modCuenta.php'>";
+                    <input type='submit' value='Guardar Cambios' style='background-color:black;
+                    text-align: center;
+                    margin-top: 5%;
+                    margin-bottom: 5%;
+                    border: 2px solid green;
+                    padding: 14px 40px;
+                    outline: none;
+                    color: white;
+                    border-radius: 24px;
+                    transition: 0.25s;
+                    cursor: pointer;' formaction='utiles/modCuenta.php'>";
             }
         }
     }

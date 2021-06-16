@@ -21,5 +21,7 @@ $result = $conn->prepare("DELETE FROM usuario WHERE id_usuario = $idUsuario");
 $result->setFetchMode(PDO::FETCH_ASSOC);
 $result->execute();
 
-header("Location: ./index.php");
+session_start();
+session_destroy();
+header("location:index.php")
 ?>

@@ -298,6 +298,24 @@ html, body {
 
 .divDes{
   margin-top: 5%;
+  margin-left: 10%;
+  width: 80%;
+  
+}
+.filtros3{
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  margin: 20px;
+  padding: 10px;
+}
+
+.filtros2{
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  margin: 20px;
+  padding: 10px;
 }
 
 .filtroI{
@@ -313,8 +331,8 @@ html, body {
   width: 13%;
   height: 50px;
   color: rgb(54, 53, 53);
-  margin-left: 25%;
-  margin-top: -4.6%;
+  margin-left: 10%;
+  /*margin-top: -5%;  */
   font-family: "Comic Sans MS", "Comic Sans", cursive;
   font-size: 15px;
 }
@@ -323,8 +341,7 @@ html, body {
   width: 13%;
   height: 50px;
   color: rgb(54, 53, 53);
-  margin-left: 45%;
-  margin-top: -4.6%;
+  margin-left: 10%;
   font-family: "Comic Sans MS", "Comic Sans", cursive;
   font-size: 15px;
 }
@@ -341,8 +358,8 @@ html, body {
 .filtroP{
   width: 35%;
   color: rgb(54, 53, 53);
-  margin-left: 40%;
-  margin-top: -13.5%;
+  margin-top: 5%;
+  margin-left: 10%;
   font-family: "Comic Sans MS", "Comic Sans", cursive;
   font-size: 15px;
 }

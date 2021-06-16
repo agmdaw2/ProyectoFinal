@@ -15,7 +15,7 @@
         echo "<div class='divDes'>";
         echo "<form method='POST'>";
 
-        echo "<div id='filtroInstituto' class='filtroI'>";
+        echo "<div class='filtros3'><div id='filtroInstituto' class='filtroI'>";
         echo "<label>Elige el/los Institutos: </label><br>";
         $result = $conn->prepare("SELECT instituto.nombre_instituto, instituto.id_instituto FROM instituto");
         $result->setFetchMode(PDO::FETCH_ASSOC);
@@ -49,10 +49,10 @@
         echo "<option value='H'>Hombre</option>";
         echo "</select>";
         echo "</div>";
-        echo "<br>";
+        echo "<br></div>";
 
         //filtro DILEMA
-        echo "<div id='filtroDilema' class='filtroD'>";
+        echo "<div class='filtros2'><div id='filtroDilema' class='filtroD'>";
         echo "<label>Elige el/los Dilemas: </label><br>";
         $result = $conn->prepare("SELECT dilema.titulo_dilema, dilema.id_dilema FROM dilema");
         $result->setFetchMode(PDO::FETCH_ASSOC);
@@ -78,17 +78,8 @@
             echo "<input type='checkbox' id='preguntaDilema".$row['id_dilema']."' name='filtro[pregunta".$row['id_pregunta']."][pregunta]' value='".$row['id_pregunta']."' style='display:none'>";
             echo "<label id='labelPreguntaDilema".$row['id_dilema']."' style='display:none'>".$row['texto_pregunta']."</label>";
         }
-        echo "</div>";
+        echo "</div></div>";
 
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
         echo "<br>";
         echo "<input type='submit' value='Guarda los filtros' id='enviar' name='submit'>";
 
